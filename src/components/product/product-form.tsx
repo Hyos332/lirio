@@ -6,12 +6,12 @@ import { useActionState, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { Price } from "@/components/ui/price";
 import { QuantityControl } from "@/components/ui/quantity-control";
-import { TextLink } from "@/components/ui/text-link";
 import { purchase, type CartActionState } from "@/lib/actions/cart";
 import type { Product, ProductVariant } from "@/lib/commerce/types";
 import { cn } from "@/lib/cn";
 import { resolveVariant, toSelectedOptions, variantParam } from "@/lib/product";
-import { routes } from "@/lib/routes";
+
+import { useCartDrawer } from "@/components/cart/cart-context";
 
 import { VariantSelector } from "./variant-selector";
 
@@ -28,7 +28,15 @@ type ProductFormProps = { product: Product; children?: ReactNode };
 export function ProductForm({ product, children }: ProductFormProps) {
   const variant = resolveVariant(product, useSearchParams().get("variant"));
   const [quantity, setQuantity] = useState(1);
-  const [state, action, pending] = useActionState(purchase, idle);
+  const { setOpen } = useCartDrawer();
+  const [state, action, pending] = useActionState(
+    async (previous: CartActionState, formData: FormData) => {
+      const result = await purchase(previous, formData);
+      if (result.status === "added") setOpen(true);
+      return result;
+    },
+    idle,
+  );
   const available = variant.availableForSale;
 
   return (
@@ -86,11 +94,6 @@ export function ProductForm({ product, children }: ProductFormProps) {
           )}
         >
           {state.message}
-          {state.status === "added" && (
-            <TextLink href={routes.cart} className="text-sm">
-              Ver carrito
-            </TextLink>
-          )}
         </p>
       </form>
     </>

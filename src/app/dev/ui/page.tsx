@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import { FreeShipping } from "@/components/cart/free-shipping";
 import { ProductGallery } from "@/components/product/product-gallery";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -251,6 +252,19 @@ export default function UiPage() {
             label="Foto estilo de vida"
             tone="dark-2"
             className="h-65 rounded-panel"
+          />
+        </div>
+      </Section>
+
+      <Section title="Envío gratis">
+        <div className="flex max-w-xl flex-col gap-4">
+          <FreeShipping
+            subtotal={samplePrice}
+            threshold={{ amount: "50.00", currencyCode: "EUR" }}
+          />
+          <FreeShipping
+            subtotal={{ amount: "60.00", currencyCode: "EUR" }}
+            threshold={{ amount: "50.00", currencyCode: "EUR" }}
           />
         </div>
       </Section>

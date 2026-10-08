@@ -1,0 +1,591 @@
+{
+  "_mock": true,
+  "countries": [
+    { "isoCode": "CO", "name": "Colombia", "currencyCode": "COP" },
+    { "isoCode": "ES", "name": "España", "currencyCode": "EUR" },
+    { "isoCode": "US", "name": "Estados Unidos", "currencyCode": "USD" },
+    { "isoCode": "MX", "name": "México", "currencyCode": "MXN" }
+  ],
+  "discountCodes": [{ "code": "PRUEBA10", "percentage": 10 }],
+  "swatches": {
+    "Negro": "#111214",
+    "Blanco": "#FFFFFF",
+    "Gris": "#8A8D93",
+    "Arena": "#D8CFC0",
+    "Verde salvia": "#A3B09A"
+  },
+  "tagFilter": {
+    "label": "Disponibilidad",
+    "tags": [
+      { "tag": "oferta", "label": "En oferta" },
+      { "tag": "envio-rapido", "label": "Envío rápido" }
+    ]
+  },
+  "menus": {
+    "main-menu": [
+      { "title": "Audio", "path": "/colecciones/audio" },
+      { "title": "Carga", "path": "/colecciones/carga" },
+      { "title": "Accesorios", "path": "/colecciones/accesorios" },
+      {
+        "title": "Hogar inteligente",
+        "path": "/colecciones/hogar-inteligente"
+      },
+      { "title": "Ofertas", "path": "/colecciones/ofertas" }
+    ]
+  },
+  "collections": [
+    {
+      "handle": "audio",
+      "title": "Audio",
+      "description": "Audífonos y parlantes con buen sonido y mejor diseño.",
+      "rule": { "category": "audio" }
+    },
+    {
+      "handle": "carga",
+      "title": "Carga",
+      "description": "Cargadores, bases y baterías para todos tus dispositivos.",
+      "rule": { "category": "carga" }
+    },
+    {
+      "handle": "accesorios",
+      "title": "Accesorios",
+      "description": "Soportes, fundas y organizadores para un escritorio en orden.",
+      "rule": { "category": "accesorios" }
+    },
+    {
+      "handle": "hogar-inteligente",
+      "title": "Hogar inteligente",
+      "description": "Iluminación, enchufes y sensores que se controlan desde el celular.",
+      "rule": { "category": "hogar-inteligente" }
+    },
+    {
+      "handle": "ofertas",
+      "title": "Ofertas",
+      "description": "Productos seleccionados con precio especial.",
+      "rule": { "tag": "oferta" }
+    },
+    {
+      "handle": "mas-vendidos",
+      "title": "Más vendidos",
+      "description": "Lo que más eligen nuestros clientes.",
+      "rule": { "tag": "mas-vendido" }
+    },
+    {
+      "handle": "todo",
+      "title": "Todos los productos",
+      "description": "El catálogo completo de Lirio.",
+      "rule": {}
+    }
+  ],
+  "pages": [
+    { "handle": "envios", "title": "Envíos" },
+    { "handle": "devoluciones", "title": "Devoluciones" },
+    { "handle": "preguntas-frecuentes", "title": "Preguntas frecuentes" },
+    { "handle": "contacto", "title": "Contacto" },
+    { "handle": "terminos", "title": "Términos y condiciones" },
+    { "handle": "privacidad", "title": "Privacidad" },
+    { "handle": "aviso-legal", "title": "Aviso legal" }
+  ],
+  "products": [
+    {
+      "handle": "audifonos-inalambricos",
+      "title": "Audífonos inalámbricos con cancelación de ruido",
+      "category": "audio",
+      "productType": "Audífonos",
+      "tags": ["mas-vendido", "envio-rapido"],
+      "createdAt": "2026-06-02",
+      "bestSellingRank": 1,
+      "price": "99.99",
+      "description": "Cancelación activa de ruido y sonido equilibrado para trabajar, viajar o desconectarte. Plegables y livianos para llevarlos a todas partes.",
+      "features": [
+        "Cancelación activa de ruido con modo ambiente",
+        "Almohadillas de espuma viscoelástica",
+        "Estuche rígido incluido"
+      ],
+      "specifications": [
+        { "label": "Conectividad", "value": "Bluetooth 5.3" },
+        { "label": "Autonomía", "value": "Hasta 30 horas" },
+        { "label": "Carga", "value": "USB-C" }
+      ],
+      "options": [{ "name": "Color", "values": ["Negro", "Blanco", "Gris"] }],
+      "variants": [
+        {
+          "id": "audifonos-inalambricos-negro",
+          "options": { "Color": "Negro" },
+          "available": true
+        },
+        {
+          "id": "audifonos-inalambricos-blanco",
+          "options": { "Color": "Blanco" },
+          "available": true
+        },
+        {
+          "id": "audifonos-inalambricos-gris",
+          "options": { "Color": "Gris" },
+          "available": false
+        }
+      ]
+    },
+    {
+      "handle": "audifonos-in-ear",
+      "title": "Audífonos in-ear inalámbricos",
+      "category": "audio",
+      "productType": "Audífonos",
+      "tags": ["nuevo"],
+      "createdAt": "2026-09-20",
+      "bestSellingRank": 6,
+      "price": "59.99",
+      "description": "Compactos, cómodos y con estuche de carga de bolsillo. Ideales para el día a día y el ejercicio.",
+      "features": [
+        "Tres tamaños de almohadillas",
+        "Resistentes al sudor",
+        "Controles táctiles"
+      ],
+      "specifications": [
+        { "label": "Conectividad", "value": "Bluetooth 5.3" },
+        { "label": "Autonomía", "value": "Hasta 24 horas con estuche" },
+        { "label": "Resistencia", "value": "IPX4" }
+      ],
+      "options": [{ "name": "Color", "values": ["Negro", "Blanco"] }],
+      "variants": [
+        {
+          "id": "audifonos-in-ear-negro",
+          "options": { "Color": "Negro" },
+          "available": true
+        },
+        {
+          "id": "audifonos-in-ear-blanco",
+          "options": { "Color": "Blanco" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "handle": "parlante-bluetooth-portatil",
+      "title": "Parlante Bluetooth portátil",
+      "category": "audio",
+      "productType": "Parlantes",
+      "tags": ["oferta", "envio-rapido"],
+      "createdAt": "2026-03-14",
+      "bestSellingRank": 5,
+      "price": "49.99",
+      "compareAtPrice": "69.99",
+      "description": "Sonido de 360 grados en un cuerpo compacto y resistente al agua. Para el escritorio, la cocina o la playa.",
+      "features": [
+        "Sonido de 360 grados",
+        "Correa de transporte",
+        "Micrófono para llamadas"
+      ],
+      "specifications": [
+        { "label": "Conectividad", "value": "Bluetooth 5.2" },
+        { "label": "Autonomía", "value": "Hasta 12 horas" },
+        { "label": "Resistencia", "value": "IP67" }
+      ],
+      "options": [{ "name": "Color", "values": ["Negro", "Arena"] }],
+      "variants": [
+        {
+          "id": "parlante-bluetooth-portatil-negro",
+          "options": { "Color": "Negro" },
+          "available": true
+        },
+        {
+          "id": "parlante-bluetooth-portatil-arena",
+          "options": { "Color": "Arena" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "handle": "barra-de-sonido-compacta",
+      "title": "Barra de sonido compacta",
+      "category": "audio",
+      "productType": "Parlantes",
+      "tags": [],
+      "createdAt": "2025-11-08",
+      "bestSellingRank": 14,
+      "price": "149.99",
+      "description": "Mejora el sonido de tu televisor o monitor sin ocupar espacio. Diálogos claros y graves definidos.",
+      "features": [
+        "Modo de voz",
+        "Montaje en pared incluido",
+        "Control remoto"
+      ],
+      "specifications": [
+        { "label": "Conectividad", "value": "HDMI ARC, óptica y Bluetooth" },
+        { "label": "Ancho", "value": "60 cm" }
+      ],
+      "options": [],
+      "variants": [
+        { "id": "barra-de-sonido-compacta", "options": {}, "available": false }
+      ]
+    },
+    {
+      "handle": "base-de-carga-3-en-1",
+      "title": "Base de carga 3 en 1",
+      "category": "carga",
+      "productType": "Cargadores",
+      "tags": ["mas-vendido"],
+      "createdAt": "2026-05-10",
+      "bestSellingRank": 2,
+      "price": "79.99",
+      "description": "Carga tu celular, reloj y audífonos al mismo tiempo desde una sola base. Un solo cable en el escritorio.",
+      "features": [
+        "Carga inalámbrica",
+        "Base antideslizante",
+        "Luz de estado atenuada"
+      ],
+      "specifications": [
+        { "label": "Potencia", "value": "Hasta 15 W" },
+        { "label": "Entrada", "value": "USB-C" }
+      ],
+      "options": [{ "name": "Color", "values": ["Negro", "Blanco"] }],
+      "variants": [
+        {
+          "id": "base-de-carga-3-en-1-negro",
+          "options": { "Color": "Negro" },
+          "available": true
+        },
+        {
+          "id": "base-de-carga-3-en-1-blanco",
+          "options": { "Color": "Blanco" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "handle": "cargador-gan-65w",
+      "title": "Cargador GaN de 65 W",
+      "category": "carga",
+      "productType": "Cargadores",
+      "tags": ["envio-rapido"],
+      "createdAt": "2026-07-01",
+      "bestSellingRank": 7,
+      "price": "39.99",
+      "description": "Un cargador pequeño para laptop, tablet y celular. Dos puertos USB-C y uno USB-A.",
+      "features": [
+        "Tecnología GaN",
+        "Patas plegables",
+        "Protección contra sobrecarga"
+      ],
+      "specifications": [
+        { "label": "Potencia", "value": "65 W" },
+        { "label": "Puertos", "value": "2 USB-C y 1 USB-A" }
+      ],
+      "options": [{ "name": "Color", "values": ["Blanco"] }],
+      "variants": [
+        {
+          "id": "cargador-gan-65w-blanco",
+          "options": { "Color": "Blanco" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "handle": "bateria-portatil",
+      "title": "Batería portátil de 10 000 mAh",
+      "category": "carga",
+      "productType": "Baterías",
+      "tags": ["oferta"],
+      "createdAt": "2026-02-18",
+      "bestSellingRank": 8,
+      "price": "29.99",
+      "compareAtPrice": "39.99",
+      "description": "Delgada y liviana, con carga rápida para tu celular. Cabe en cualquier bolsillo.",
+      "features": ["Carga rápida", "Indicador de batería", "Cable incluido"],
+      "specifications": [
+        { "label": "Capacidad", "value": "10 000 mAh" },
+        { "label": "Salida", "value": "USB-C, hasta 20 W" }
+      ],
+      "options": [{ "name": "Color", "values": ["Negro", "Gris"] }],
+      "variants": [
+        {
+          "id": "bateria-portatil-negro",
+          "options": { "Color": "Negro" },
+          "available": true
+        },
+        {
+          "id": "bateria-portatil-gris",
+          "options": { "Color": "Gris" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "handle": "cable-usb-c-trenzado",
+      "title": "Cable USB-C trenzado de 2 m",
+      "category": "carga",
+      "productType": "Cables",
+      "tags": [],
+      "createdAt": "2025-12-03",
+      "bestSellingRank": 10,
+      "price": "19.99",
+      "description": "Cable resistente con recubrimiento trenzado y conectores reforzados.",
+      "features": [
+        "Recubrimiento trenzado",
+        "Conectores reforzados",
+        "Cierre de velcro"
+      ],
+      "specifications": [
+        { "label": "Largo", "value": "2 m" },
+        { "label": "Potencia", "value": "Hasta 100 W" }
+      ],
+      "options": [{ "name": "Color", "values": ["Negro", "Blanco"] }],
+      "variants": [
+        {
+          "id": "cable-usb-c-trenzado-negro",
+          "options": { "Color": "Negro" },
+          "available": true
+        },
+        {
+          "id": "cable-usb-c-trenzado-blanco",
+          "options": { "Color": "Blanco" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "handle": "soporte-aluminio-laptop",
+      "title": "Soporte de aluminio para laptop",
+      "category": "accesorios",
+      "productType": "Soportes",
+      "tags": ["mas-vendido"],
+      "createdAt": "2026-04-22",
+      "bestSellingRank": 3,
+      "price": "49.99",
+      "description": "Eleva la pantalla a la altura de los ojos y mejora la ventilación. Firme, liviano y plegable.",
+      "features": ["Altura ajustable", "Almohadillas de silicona", "Plegable"],
+      "specifications": [
+        { "label": "Material", "value": "Aluminio" },
+        { "label": "Compatibilidad", "value": "Laptops de 10 a 16 pulgadas" }
+      ],
+      "options": [{ "name": "Color", "values": ["Gris", "Negro"] }],
+      "variants": [
+        {
+          "id": "soporte-aluminio-laptop-gris",
+          "options": { "Color": "Gris" },
+          "available": true
+        },
+        {
+          "id": "soporte-aluminio-laptop-negro",
+          "options": { "Color": "Negro" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "handle": "organizador-de-cables",
+      "title": "Organizador de cables de silicona",
+      "category": "accesorios",
+      "productType": "Organizadores",
+      "tags": ["nuevo", "envio-rapido"],
+      "createdAt": "2026-09-28",
+      "bestSellingRank": 9,
+      "price": "19.99",
+      "description": "Mantén los cables en su lugar sobre el escritorio. Se adhiere sin dejar marcas.",
+      "features": ["Cinco ranuras", "Base adhesiva reutilizable"],
+      "specifications": [{ "label": "Material", "value": "Silicona" }],
+      "options": [{ "name": "Color", "values": ["Negro", "Arena"] }],
+      "variants": [
+        {
+          "id": "organizador-de-cables-negro",
+          "options": { "Color": "Negro" },
+          "available": true
+        },
+        {
+          "id": "organizador-de-cables-arena",
+          "options": { "Color": "Arena" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "handle": "funda-para-laptop",
+      "title": "Funda para laptop",
+      "category": "accesorios",
+      "productType": "Fundas",
+      "tags": [],
+      "createdAt": "2026-01-15",
+      "bestSellingRank": 11,
+      "price": "39.99",
+      "description": "Protección acolchada con un exterior de fieltro y bolsillo para el cargador.",
+      "features": [
+        "Interior acolchado",
+        "Bolsillo frontal",
+        "Cierre magnético"
+      ],
+      "specifications": [
+        { "label": "Material", "value": "Fieltro de poliéster reciclado" }
+      ],
+      "options": [
+        { "name": "Color", "values": ["Gris", "Verde salvia"] },
+        {
+          "name": "Tamaño",
+          "values": ["13 pulgadas", "14 pulgadas", "16 pulgadas"]
+        }
+      ],
+      "variants": [
+        {
+          "id": "funda-para-laptop-gris-13",
+          "options": { "Color": "Gris", "Tamaño": "13 pulgadas" },
+          "available": true
+        },
+        {
+          "id": "funda-para-laptop-gris-14",
+          "options": { "Color": "Gris", "Tamaño": "14 pulgadas" },
+          "available": true
+        },
+        {
+          "id": "funda-para-laptop-gris-16",
+          "options": { "Color": "Gris", "Tamaño": "16 pulgadas" },
+          "available": false
+        },
+        {
+          "id": "funda-para-laptop-verde-13",
+          "options": { "Color": "Verde salvia", "Tamaño": "13 pulgadas" },
+          "available": true
+        },
+        {
+          "id": "funda-para-laptop-verde-14",
+          "options": { "Color": "Verde salvia", "Tamaño": "14 pulgadas" },
+          "available": false
+        },
+        {
+          "id": "funda-para-laptop-verde-16",
+          "options": { "Color": "Verde salvia", "Tamaño": "16 pulgadas" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "handle": "alfombrilla-de-escritorio",
+      "title": "Alfombrilla de escritorio de fieltro",
+      "category": "accesorios",
+      "productType": "Escritorio",
+      "tags": ["oferta"],
+      "createdAt": "2025-10-30",
+      "bestSellingRank": 12,
+      "price": "29.99",
+      "compareAtPrice": "39.99",
+      "description": "Una superficie suave para el teclado y el mouse que además protege tu escritorio.",
+      "features": ["Base antideslizante", "Bordes cosidos"],
+      "specifications": [{ "label": "Medidas", "value": "80 × 30 cm" }],
+      "options": [{ "name": "Color", "values": ["Gris", "Negro"] }],
+      "variants": [
+        {
+          "id": "alfombrilla-de-escritorio-gris",
+          "options": { "Color": "Gris" },
+          "available": true
+        },
+        {
+          "id": "alfombrilla-de-escritorio-negro",
+          "options": { "Color": "Negro" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "handle": "lampara-led-inteligente",
+      "title": "Lámpara LED inteligente",
+      "category": "hogar-inteligente",
+      "productType": "Iluminación",
+      "tags": ["mas-vendido"],
+      "createdAt": "2026-05-25",
+      "bestSellingRank": 4,
+      "price": "59.99",
+      "description": "Luz regulable en intensidad y temperatura, controlable desde el celular o con la voz.",
+      "features": [
+        "Intensidad regulable",
+        "Rutinas programables",
+        "Compatible con asistentes de voz"
+      ],
+      "specifications": [
+        { "label": "Conectividad", "value": "Wi-Fi 2,4 GHz" },
+        { "label": "Temperatura de color", "value": "2700 K a 6500 K" }
+      ],
+      "options": [{ "name": "Color", "values": ["Blanco", "Negro"] }],
+      "variants": [
+        {
+          "id": "lampara-led-inteligente-blanco",
+          "options": { "Color": "Blanco" },
+          "available": true
+        },
+        {
+          "id": "lampara-led-inteligente-negro",
+          "options": { "Color": "Negro" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "handle": "enchufe-inteligente",
+      "title": "Enchufe inteligente Wi-Fi",
+      "category": "hogar-inteligente",
+      "productType": "Enchufes",
+      "tags": ["envio-rapido"],
+      "createdAt": "2026-03-03",
+      "bestSellingRank": 13,
+      "price": "19.99",
+      "description": "Enciende y apaga cualquier aparato desde el celular y programa horarios.",
+      "features": ["Programación por horario", "Medición de consumo"],
+      "specifications": [{ "label": "Conectividad", "value": "Wi-Fi 2,4 GHz" }],
+      "options": [],
+      "variants": [
+        { "id": "enchufe-inteligente", "options": {}, "available": true }
+      ]
+    },
+    {
+      "handle": "sensor-de-movimiento",
+      "title": "Sensor de movimiento inteligente",
+      "category": "hogar-inteligente",
+      "productType": "Sensores",
+      "tags": ["nuevo"],
+      "createdAt": "2026-09-12",
+      "bestSellingRank": 15,
+      "price": "29.99",
+      "description": "Detecta movimiento y activa luces o alertas automáticamente.",
+      "features": ["Instalación sin cables", "Alertas en el celular"],
+      "specifications": [
+        { "label": "Conectividad", "value": "Wi-Fi 2,4 GHz" },
+        { "label": "Alimentación", "value": "Pilas AAA" }
+      ],
+      "options": [],
+      "variants": [
+        { "id": "sensor-de-movimiento", "options": {}, "available": true }
+      ]
+    },
+    {
+      "handle": "camara-de-seguridad-interior",
+      "title": "Cámara de seguridad interior",
+      "category": "hogar-inteligente",
+      "productType": "Cámaras",
+      "tags": ["oferta"],
+      "createdAt": "2025-09-19",
+      "bestSellingRank": 16,
+      "price": "79.99",
+      "compareAtPrice": "99.99",
+      "description": "Mira lo que pasa en casa desde el celular, de día y de noche.",
+      "features": [
+        "Visión nocturna",
+        "Audio bidireccional",
+        "Detección de movimiento"
+      ],
+      "specifications": [
+        { "label": "Resolución", "value": "2K" },
+        { "label": "Conectividad", "value": "Wi-Fi 2,4 GHz" }
+      ],
+      "options": [{ "name": "Color", "values": ["Blanco", "Negro"] }],
+      "variants": [
+        {
+          "id": "camara-de-seguridad-interior-blanco",
+          "options": { "Color": "Blanco" },
+          "available": true
+        },
+        {
+          "id": "camara-de-seguridad-interior-negro",
+          "options": { "Color": "Negro" },
+          "available": false
+        }
+      ]
+    }
+  ]
+}

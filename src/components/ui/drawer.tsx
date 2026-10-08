@@ -16,6 +16,7 @@ type DrawerProps = {
   onClose: () => void;
   title: string;
   side?: keyof typeof sides;
+  footer?: ReactNode;
   children: ReactNode;
 };
 
@@ -24,6 +25,7 @@ export function Drawer({
   onClose,
   title,
   side = "right",
+  footer,
   children,
 }: DrawerProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -58,6 +60,9 @@ export function Drawer({
           <IconButton icon="close" label="Cerrar" onClick={onClose} />
         </div>
         <div className="flex-1 overflow-y-auto">{children}</div>
+        {footer && (
+          <div className="shrink-0 border-t border-line p-4">{footer}</div>
+        )}
       </div>
     </dialog>
   );

@@ -3,7 +3,7 @@ import { cn } from "@/lib/cn";
 import { Action, type ActionProps } from "./action";
 
 export type ButtonVariant = "primary" | "accent" | "secondary" | "inverted";
-export type ButtonSize = "md" | "lg";
+export type ButtonSize = "sm" | "md" | "lg";
 
 const variants: Record<ButtonVariant, string> = {
   primary: "bg-ink text-white hover:bg-ink/85",
@@ -13,6 +13,7 @@ const variants: Record<ButtonVariant, string> = {
 };
 
 const sizes: Record<ButtonSize, string> = {
+  sm: "h-11 text-md",
   md: "h-13 text-md",
   lg: "h-14 text-base",
 };

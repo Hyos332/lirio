@@ -1,22 +1,20 @@
+import { store } from "@/config/store";
 import type { Money } from "@/lib/commerce/types";
-
-const DEFAULT_LOCALE = "es";
 
 const formatters = new Map<string, Intl.NumberFormat>();
 
-function getFormatter(locale: string, currencyCode: string) {
-  const key = `${locale}:${currencyCode}`;
-  let formatter = formatters.get(key);
+function getFormatter(currencyCode: string) {
+  let formatter = formatters.get(currencyCode);
   if (!formatter) {
-    formatter = new Intl.NumberFormat(locale, {
+    formatter = new Intl.NumberFormat(store.locale, {
       style: "currency",
       currency: currencyCode,
     });
-    formatters.set(key, formatter);
+    formatters.set(currencyCode, formatter);
   }
   return formatter;
 }
 
-export function formatMoney(money: Money, locale = DEFAULT_LOCALE) {
-  return getFormatter(locale, money.currencyCode).format(Number(money.amount));
+export function formatMoney(money: Money) {
+  return getFormatter(money.currencyCode).format(Number(money.amount));
 }

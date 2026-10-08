@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useActionState, useState, type ReactNode } from "react";
 
+import { ClickSpark } from "@/components/motion/click-spark";
 import { Button } from "@/components/ui/button";
 import { Price } from "@/components/ui/price";
 import { QuantityControl } from "@/components/ui/quantity-control";
@@ -62,17 +63,19 @@ export function ProductForm({ product, children }: ProductFormProps) {
             onChange={setQuantity}
             disabled={!available}
           />
-          <Button
-            type="submit"
-            name="intent"
-            value="add"
-            variant="accent"
-            size="lg"
-            disabled={!available || pending}
-            className="flex-1"
-          >
-            {available ? "Agregar al carrito" : "Agotado"}
-          </Button>
+          <ClickSpark className="flex-1">
+            <Button
+              type="submit"
+              name="intent"
+              value="add"
+              variant="accent"
+              size="lg"
+              fullWidth
+              disabled={!available || pending}
+            >
+              {available ? "Agregar al carrito" : "Agotado"}
+            </Button>
+          </ClickSpark>
         </div>
         <Button
           type="submit"

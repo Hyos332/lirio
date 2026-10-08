@@ -34,7 +34,7 @@ export function Button({
   return (
     <Action
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-pill px-7 font-medium whitespace-nowrap transition-colors select-none disabled:pointer-events-none disabled:opacity-40",
+        "inline-flex items-center justify-center gap-2 rounded-pill px-7 font-medium whitespace-nowrap transition select-none active:scale-[0.98] disabled:pointer-events-none disabled:opacity-40",
         variants[variant],
         sizes[size],
         fullWidth && "w-full",

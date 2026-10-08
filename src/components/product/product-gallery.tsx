@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, ViewTransition, type ReactNode } from "react";
 
 import { ImagePlaceholder } from "@/components/ui/image-placeholder";
 import { Picture } from "@/components/ui/picture";
 import type { Image } from "@/lib/commerce/types";
+import { morphName } from "@/lib/product";
 
 const slideClassName = "aspect-square lg:aspect-auto lg:h-155";
 
@@ -14,24 +15,30 @@ function scrollBehavior(): ScrollBehavior {
     : "smooth";
 }
 
-export function ProductGallery({
-  images,
-  title,
-}: {
-  images: Image[];
-  title: string;
-}) {
+function Morph({ handle, children }: { handle: string; children: ReactNode }) {
+  return (
+    <ViewTransition name={morphName(handle)} share="morph" default="none">
+      {children}
+    </ViewTransition>
+  );
+}
+
+type ProductGalleryProps = { handle: string; images: Image[]; title: string };
+
+export function ProductGallery({ handle, images, title }: ProductGalleryProps) {
   const trackRef = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);
 
   if (images.length === 0) {
     return (
-      <ImagePlaceholder
-        label="Foto principal"
-        tone="surface"
-        withIcon
-        className={`${slideClassName} rounded-panel border border-line`}
-      />
+      <Morph handle={handle}>
+        <ImagePlaceholder
+          label="Foto principal"
+          tone="surface"
+          withIcon
+          className={`${slideClassName} rounded-panel border border-line`}
+        />
+      </Morph>
     );
   }
 
@@ -47,30 +54,32 @@ export function ProductGallery({
 
   return (
     <div>
-      <ul
-        ref={trackRef}
-        aria-label={`Imágenes de ${title}`}
-        onScroll={(event) => {
-          const track = event.currentTarget;
-          setActive(Math.round(track.scrollLeft / track.clientWidth));
-        }}
-        className="flex snap-x snap-mandatory [scrollbar-width:none] overflow-x-auto overscroll-x-contain rounded-panel border border-line bg-surface lg:overflow-hidden"
-      >
-        {images.map((image, index) => (
-          <li key={image.url} className="w-full shrink-0 snap-center">
-            <Picture
-              image={image}
-              alt={image.altText || `${title}, imagen ${index + 1}`}
-              placeholder="Foto producto"
-              tone="surface"
-              fit="contain"
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              preload={index === 0}
-              className={slideClassName}
-            />
-          </li>
-        ))}
-      </ul>
+      <Morph handle={handle}>
+        <ul
+          ref={trackRef}
+          aria-label={`Imágenes de ${title}`}
+          onScroll={(event) => {
+            const track = event.currentTarget;
+            setActive(Math.round(track.scrollLeft / track.clientWidth));
+          }}
+          className="flex snap-x snap-mandatory [scrollbar-width:none] overflow-x-auto overscroll-x-contain rounded-panel border border-line bg-surface lg:overflow-hidden"
+        >
+          {images.map((image, index) => (
+            <li key={image.url} className="w-full shrink-0 snap-center">
+              <Picture
+                image={image}
+                alt={image.altText || `${title}, imagen ${index + 1}`}
+                placeholder="Foto producto"
+                tone="surface"
+                fit="contain"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                preload={index === 0}
+                className={slideClassName}
+              />
+            </li>
+          ))}
+        </ul>
+      </Morph>
 
       {images.length > 1 && (
         <>
@@ -81,7 +90,7 @@ export function ProductGallery({
             {images.map((image, index) => (
               <span
                 key={image.url}
-                className={`size-1.5 rounded-pill ${index === active ? "bg-ink" : "bg-line-strong"}`}
+                className={`size-1.5 rounded-pill transition-colors ${index === active ? "bg-ink" : "bg-line-strong"}`}
               />
             ))}
           </div>

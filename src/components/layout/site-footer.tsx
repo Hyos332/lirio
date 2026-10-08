@@ -2,6 +2,7 @@ import { cacheLife } from "next/cache";
 import Link from "next/link";
 import { Suspense } from "react";
 
+import { Lily } from "@/components/brand/lily";
 import { Container } from "@/components/ui/container";
 import { footerNavigation } from "@/config/navigation";
 import { store } from "@/config/store";
@@ -17,8 +18,12 @@ async function CurrentYear() {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-surface-2">
-      <Container className="grid gap-12 pt-16 pb-12 lg:grid-cols-[1fr_auto]">
+    <footer className="relative overflow-hidden bg-surface-2">
+      <Lily
+        trigger="scroll"
+        className="pointer-events-none absolute -bottom-24 left-1/3 hidden h-96 text-line-strong lg:block"
+      />
+      <Container className="relative grid gap-12 pt-16 pb-12 lg:grid-cols-[1fr_auto]">
         <div>
           <Logo />
           <p className="mt-3 max-w-56 text-sm text-muted">{store.tagline}</p>
@@ -46,7 +51,7 @@ export function SiteFooter() {
           ))}
         </nav>
       </Container>
-      <Container className="flex flex-col gap-4 border-t border-line py-6 sm:flex-row sm:items-center sm:justify-between">
+      <Container className="relative flex flex-col gap-4 border-t border-line py-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted">
           © <CurrentYear /> {store.name} · Todos los derechos reservados
         </p>

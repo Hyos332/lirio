@@ -14,7 +14,8 @@ import { routes } from "@/lib/routes";
 
 import { FilterPanel } from "./filter-panel";
 
-const layoutClassName = "mt-8 grid gap-10 lg:mt-10 lg:grid-cols-[220px_1fr]";
+const layoutClassName =
+  "mt-8 grid min-h-[70dvh] content-start gap-10 lg:mt-10 lg:grid-cols-[220px_1fr]";
 
 function EmptyState({ data }: { data: CatalogData }) {
   const filtered = hasActiveFilters(data.state);
@@ -69,6 +70,7 @@ export async function CatalogResults({ data }: { data: Promise<CatalogData> }) {
         />
       </aside>
       <div>
+        <h2 className="sr-only">Productos</h2>
         {catalog.products.length > 0 ? (
           <>
             <ProductGrid products={catalog.products} columns={3} />

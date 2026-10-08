@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatedMoney } from "@/components/motion/animated-money";
 import { Button } from "@/components/ui/button";
 import { formatMoney, pluralize } from "@/lib/format";
 import { routes } from "@/lib/routes";
@@ -43,7 +44,7 @@ export function CartPageView({ paymentMethods }: { paymentMethods: string[] }) {
             </h2>
             <dl className="mt-6 flex flex-col gap-3">
               <SummaryRow label="Subtotal">
-                <span className="font-mono">{formatMoney(cart.subtotal)}</span>
+                <AnimatedMoney money={cart.subtotal} className="font-mono" />
               </SummaryRow>
               {cart.discount && (
                 <SummaryRow label="Descuento">
@@ -59,7 +60,7 @@ export function CartPageView({ paymentMethods }: { paymentMethods: string[] }) {
             </div>
             <dl className="mt-5 border-t border-line pt-5">
               <SummaryRow label="Total" emphasis>
-                <span className="font-mono">{formatMoney(cart.total)}</span>
+                <AnimatedMoney money={cart.total} className="font-mono" />
               </SummaryRow>
             </dl>
             <div className="mt-6">
@@ -123,7 +124,7 @@ export function CartDrawerView({ onNavigate }: { onNavigate: () => void }) {
             </SummaryRow>
           )}
           <SummaryRow label="Subtotal" emphasis>
-            <span className="font-mono">{formatMoney(cart.total)}</span>
+            <AnimatedMoney money={cart.total} className="font-mono" />
           </SummaryRow>
         </dl>
         <p className="mt-1 text-xs text-muted">

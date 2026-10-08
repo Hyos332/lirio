@@ -271,7 +271,11 @@ export default function UiPage() {
 
       <Section title="Galería de producto">
         <div className="max-w-2xl">
-          <ProductGallery images={galleryImages} title="Producto de prueba" />
+          <ProductGallery
+            handle="demo"
+            images={galleryImages}
+            title="Producto de prueba"
+          />
         </div>
       </Section>
 

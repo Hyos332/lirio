@@ -76,3 +76,7 @@ export function variantFor(
 export function describeOptions(options: SelectedOption[]) {
   return options.map(({ name, value }) => `${name}: ${value}`).join(" · ");
 }
+
+export function morphName(handle: string) {
+  return `producto-${handle}`;
+}

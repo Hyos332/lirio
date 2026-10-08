@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { ViewTransition } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Picture } from "@/components/ui/picture";
 import { Price } from "@/components/ui/price";
 import type { ProductSummary } from "@/lib/commerce/types";
-import { getProductBadge } from "@/lib/product";
+import { getProductBadge, morphName } from "@/lib/product";
 import { routes } from "@/lib/routes";
 
 const imageClassName = "h-48 rounded-card md:h-75";
@@ -15,15 +16,21 @@ export function ProductCard({ product }: { product: ProductSummary }) {
   return (
     <Link href={routes.product(product.handle)} className="group block">
       <div className="relative">
-        <Picture
-          image={product.featuredImage}
-          alt=""
-          placeholder="Foto producto"
-          tone="surface"
-          fit="contain"
-          sizes="(min-width: 1024px) 25vw, 50vw"
-          className={`${imageClassName} border border-line transition-colors group-hover:border-line-strong`}
-        />
+        <ViewTransition
+          name={morphName(product.handle)}
+          share="morph"
+          default="none"
+        >
+          <Picture
+            image={product.featuredImage}
+            alt=""
+            placeholder="Foto producto"
+            tone="surface"
+            fit="contain"
+            sizes="(min-width: 1024px) 25vw, 50vw"
+            className={`${imageClassName} border border-line transition-colors group-hover:border-line-strong [&_img]:transition-transform [&_img]:duration-500 group-hover:[&_img]:scale-[1.03]`}
+          />
+        </ViewTransition>
         {badge && <Badge className="absolute top-4 left-4">{badge}</Badge>}
       </div>
       <h3 className="mt-3 text-md font-medium sm:mt-4 sm:text-base">

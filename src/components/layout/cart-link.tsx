@@ -16,7 +16,11 @@ export function CartIcon({ count }: { count: number }) {
       }
     >
       {count > 0 && (
-        <Badge variant="count" className="absolute top-1.5 right-1">
+        <Badge
+          key={count}
+          variant="count"
+          className="absolute top-1.5 right-1 animate-pop"
+        >
           {count}
         </Badge>
       )}

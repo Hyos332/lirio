@@ -18,7 +18,7 @@ export function ProductGrid({ products, columns = 4 }: ProductGridProps) {
   return (
     <ul className={gridClassName(columns)}>
       {products.map((product) => (
-        <li key={product.id}>
+        <li key={product.id} className="reveal">
           <ProductCard product={product} />
         </li>
       ))}

@@ -86,6 +86,104 @@
   --container-page: 84rem;
 
   --ease-ui: cubic-bezier(0.2, 0, 0, 1);
+
+  --animate-blur-in: blur-in 800ms var(--ease-ui) both;
+  --animate-draw: draw 1600ms var(--ease-ui) both;
+  --animate-fade-in: fade-in 600ms var(--ease-ui) both;
+  --animate-sway: sway 9s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 28s linear infinite;
+  --animate-pop: pop 360ms var(--ease-ui);
+  --animate-settle: settle 1400ms var(--ease-ui) both;
+
+  @keyframes blur-in {
+    0% {
+      opacity: 0;
+      filter: blur(10px);
+      translate: 0 -0.35em;
+    }
+    55% {
+      opacity: 0.6;
+      filter: blur(3px);
+      translate: 0 0.04em;
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      translate: 0 0;
+    }
+  }
+
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes sway {
+    0%,
+    100% {
+      rotate: -1.5deg;
+    }
+    50% {
+      rotate: 1.5deg;
+    }
+  }
+
+  @keyframes spin-slow {
+    to {
+      rotate: 360deg;
+    }
+  }
+
+  @keyframes pop {
+    0% {
+      scale: 0.5;
+    }
+    60% {
+      scale: 1.15;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+
+  @keyframes settle {
+    from {
+      scale: 1.05;
+    }
+    to {
+      scale: 1;
+    }
+  }
+
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      translate: 0 28px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+
+  @keyframes via-blur {
+    30% {
+      filter: blur(3px);
+    }
+  }
   --default-transition-duration: 180ms;
   --default-transition-timing-function: var(--ease-ui);
 }
@@ -96,9 +194,58 @@
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
+@utility reveal {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: reveal-up var(--ease-ui) both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 75%;
+    }
+  }
+}
+
+@utility draw-on-scroll {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation-timeline: view();
+      animation-range: entry 10% cover 45%;
+    }
+  }
+}
+
 @layer base {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
   html {
     -webkit-text-size-adjust: 100%;
+  }
+
+  details::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition:
+      block-size 260ms var(--ease-ui),
+      content-visibility 260ms allow-discrete;
+  }
+
+  details[open]::details-content {
+    block-size: auto;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 220ms;
+  }
+
+  ::view-transition-group(.morph) {
+    animation-duration: 420ms;
+    animation-timing-function: var(--ease-ui);
+  }
+
+  ::view-transition-image-pair(.morph) {
+    animation-name: via-blur;
   }
 
   html:has(dialog[open]) {
@@ -123,6 +270,12 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+
     *,
     *::before,
     *::after {

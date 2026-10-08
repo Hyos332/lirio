@@ -4,9 +4,9 @@ import { Icon } from "./icon";
 
 export const surfaceTones = {
   surface: "bg-surface text-muted-2",
-  "surface-2": "bg-surface-2 text-muted-2",
-  "surface-3": "bg-surface-3 text-muted-2",
-  "dark-2": "bg-dark-2 text-muted-3",
+  "surface-2": "bg-surface-2 text-muted",
+  "surface-3": "bg-surface-3 text-muted",
+  "dark-2": "bg-dark-2 text-dark-text",
 };
 
 export type SurfaceTone = keyof typeof surfaceTones;

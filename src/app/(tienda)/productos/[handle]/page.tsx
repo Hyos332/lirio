@@ -90,7 +90,11 @@ export default async function ProductPage({
         ]}
       />
       <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-14">
-        <ProductGallery images={product.images} title={product.title} />
+        <ProductGallery
+          handle={product.handle}
+          images={product.images}
+          title={product.title}
+        />
         <div>
           {badge && <Badge>{badge}</Badge>}
           <h1 className="mt-3 text-h2-sm md:text-h1-product">

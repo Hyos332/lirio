@@ -14,10 +14,18 @@ export default function Home() {
         <Benefits />
       </div>
       <div className="mt-16 flex flex-col gap-16 lg:mt-20 lg:gap-20">
-        <Categories />
-        <BestSellers />
-        <SetupBanner />
-        <Newsletter />
+        <div className="reveal">
+          <Categories />
+        </div>
+        <div className="reveal">
+          <BestSellers />
+        </div>
+        <div className="reveal">
+          <SetupBanner />
+        </div>
+        <div className="reveal">
+          <Newsletter />
+        </div>
       </div>
     </Container>
   );

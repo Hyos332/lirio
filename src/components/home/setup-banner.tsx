@@ -1,3 +1,4 @@
+import { Lily } from "@/components/brand/lily";
 import { Button } from "@/components/ui/button";
 import { Picture } from "@/components/ui/picture";
 import { collections } from "@/config/collections";
@@ -8,7 +9,12 @@ export async function SetupBanner() {
   const collection = await getCollection(collections.setup);
 
   return (
-    <section className="grid items-center gap-12 rounded-block bg-dark p-6 text-white md:grid-cols-2 md:p-12 lg:p-16">
+    <section className="relative grid items-center gap-12 overflow-hidden rounded-block bg-dark p-6 text-white md:grid-cols-2 md:p-12 lg:p-16">
+      <Lily
+        trigger="scroll"
+        sway
+        className="pointer-events-none absolute -right-2 -bottom-24 hidden h-72 text-ink-2 md:block"
+      />
       <div className="hidden md:block">
         <Picture
           image={collection?.image ?? null}
@@ -19,7 +25,7 @@ export async function SetupBanner() {
           className="h-85 rounded-panel"
         />
       </div>
-      <div>
+      <div className="relative">
         <h2 className="text-h2-sm md:text-h2-dark">
           Menos cables. Más orden en tu escritorio.
         </h2>

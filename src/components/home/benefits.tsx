@@ -29,7 +29,7 @@ export function Benefits() {
       {benefits.map((benefit) => (
         <li
           key={benefit.title}
-          className="flex flex-col gap-3 rounded-card-sm border border-line bg-surface p-4 sm:flex-row sm:items-center sm:gap-4 lg:px-6 lg:py-4"
+          className="flex animate-fade-in flex-col gap-3 rounded-card-sm border border-line bg-surface p-4 sm:flex-row sm:items-center sm:gap-4 lg:px-6 lg:py-4"
         >
           <Icon name={benefit.icon} size={22} className="shrink-0" />
           <div>

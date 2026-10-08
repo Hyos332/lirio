@@ -1,4 +1,8 @@
-import type { Product, ProductVariant } from "@/lib/commerce/types";
+import type {
+  Product,
+  ProductVariant,
+  SelectedOption,
+} from "@/lib/commerce/types";
 
 export const MAX_QUANTITY = 99;
 
@@ -67,4 +71,8 @@ export function variantFor(
       ),
     )
   );
+}
+
+export function describeOptions(options: SelectedOption[]) {
+  return options.map(({ name, value }) => `${name}: ${value}`).join(" · ");
 }

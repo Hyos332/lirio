@@ -31,6 +31,7 @@ const schema = z.object({
     z.object({
       handle: text,
       title: text,
+      subtitle: text.optional(),
       category: text,
       productType: text,
       tags: z.array(text),

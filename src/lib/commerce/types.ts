@@ -50,6 +50,7 @@ export type ProductSummary = {
   id: string;
   handle: string;
   title: string;
+  subtitle: string | null;
   productType: string;
   tags: string[];
   availableForSale: boolean;

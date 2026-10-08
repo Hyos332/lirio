@@ -1,4 +1,5 @@
 import { store } from "@/config/store";
+import { normalizeText } from "@/lib/text";
 
 import type { ProductListParams } from "../provider";
 import type {
@@ -48,6 +49,7 @@ export function toSummary(
     id: product.handle,
     handle: product.handle,
     title: product.title,
+    subtitle: product.subtitle ?? null,
     productType: product.productType,
     tags: product.tags,
     availableForSale: product.variants.some((variant) => variant.available),
@@ -211,7 +213,7 @@ function buildFilters(products: MockProduct[]): Filter[] {
   const filters: Filter[] = [
     listFilter(
       "filter.p.product_type",
-      "Tipo de producto",
+      "Tipo",
       products,
       unique(products.map((product) => product.productType)).map(
         (productType) => ({
@@ -287,13 +289,6 @@ export function listProducts(
     },
     totalCount: matching.length,
   };
-}
-
-function normalizeText(value: string) {
-  return value
-    .normalize("NFD")
-    .replace(/\p{Diacritic}/gu, "")
-    .toLowerCase();
 }
 
 export function searchCatalog(query: string) {

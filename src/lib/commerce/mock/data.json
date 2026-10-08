@@ -90,6 +90,7 @@
     {
       "handle": "audifonos-inalambricos",
       "title": "Audífonos inalámbricos con cancelación de ruido",
+      "subtitle": "Cancelación de ruido",
       "category": "audio",
       "productType": "Audífonos",
       "tags": ["mas-vendido", "envio-rapido"],
@@ -129,6 +130,7 @@
     {
       "handle": "audifonos-in-ear",
       "title": "Audífonos in-ear inalámbricos",
+      "subtitle": "Estuche de carga",
       "category": "audio",
       "productType": "Audífonos",
       "tags": ["nuevo"],
@@ -163,6 +165,7 @@
     {
       "handle": "parlante-bluetooth-portatil",
       "title": "Parlante Bluetooth portátil",
+      "subtitle": "Resistente al agua",
       "category": "audio",
       "productType": "Parlantes",
       "tags": ["oferta", "envio-rapido"],
@@ -198,6 +201,7 @@
     {
       "handle": "barra-de-sonido-compacta",
       "title": "Barra de sonido compacta",
+      "subtitle": "Para TV y monitor",
       "category": "audio",
       "productType": "Parlantes",
       "tags": [],
@@ -222,6 +226,7 @@
     {
       "handle": "base-de-carga-3-en-1",
       "title": "Base de carga 3 en 1",
+      "subtitle": "Celular, reloj y audífonos",
       "category": "carga",
       "productType": "Cargadores",
       "tags": ["mas-vendido"],
@@ -255,6 +260,7 @@
     {
       "handle": "cargador-gan-65w",
       "title": "Cargador GaN de 65 W",
+      "subtitle": "Tres puertos",
       "category": "carga",
       "productType": "Cargadores",
       "tags": ["envio-rapido"],
@@ -283,6 +289,7 @@
     {
       "handle": "bateria-portatil",
       "title": "Batería portátil de 10 000 mAh",
+      "subtitle": "Carga rápida",
       "category": "carga",
       "productType": "Baterías",
       "tags": ["oferta"],
@@ -313,6 +320,7 @@
     {
       "handle": "cable-usb-c-trenzado",
       "title": "Cable USB-C trenzado de 2 m",
+      "subtitle": "Hasta 100 W",
       "category": "carga",
       "productType": "Cables",
       "tags": [],
@@ -346,6 +354,7 @@
     {
       "handle": "soporte-aluminio-laptop",
       "title": "Soporte de aluminio para laptop",
+      "subtitle": "Altura ajustable",
       "category": "accesorios",
       "productType": "Soportes",
       "tags": ["mas-vendido"],
@@ -375,6 +384,7 @@
     {
       "handle": "organizador-de-cables",
       "title": "Organizador de cables de silicona",
+      "subtitle": "Base adhesiva",
       "category": "accesorios",
       "productType": "Organizadores",
       "tags": ["nuevo", "envio-rapido"],
@@ -401,6 +411,7 @@
     {
       "handle": "funda-para-laptop",
       "title": "Funda para laptop",
+      "subtitle": "Fieltro acolchado",
       "category": "accesorios",
       "productType": "Fundas",
       "tags": [],
@@ -459,6 +470,7 @@
     {
       "handle": "alfombrilla-de-escritorio",
       "title": "Alfombrilla de escritorio de fieltro",
+      "subtitle": "Fieltro y base antideslizante",
       "category": "accesorios",
       "productType": "Escritorio",
       "tags": ["oferta"],
@@ -486,6 +498,7 @@
     {
       "handle": "lampara-led-inteligente",
       "title": "Lámpara LED inteligente",
+      "subtitle": "Control por voz",
       "category": "hogar-inteligente",
       "productType": "Iluminación",
       "tags": ["mas-vendido"],
@@ -519,6 +532,7 @@
     {
       "handle": "enchufe-inteligente",
       "title": "Enchufe inteligente Wi-Fi",
+      "subtitle": "Programable",
       "category": "hogar-inteligente",
       "productType": "Enchufes",
       "tags": ["envio-rapido"],
@@ -536,6 +550,7 @@
     {
       "handle": "sensor-de-movimiento",
       "title": "Sensor de movimiento inteligente",
+      "subtitle": "Sin cables",
       "category": "hogar-inteligente",
       "productType": "Sensores",
       "tags": ["nuevo"],
@@ -556,6 +571,7 @@
     {
       "handle": "camara-de-seguridad-interior",
       "title": "Cámara de seguridad interior",
+      "subtitle": "Visión nocturna",
       "category": "hogar-inteligente",
       "productType": "Cámaras",
       "tags": ["oferta"],

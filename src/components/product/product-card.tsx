@@ -26,12 +26,14 @@ export function ProductCard({ product }: { product: ProductSummary }) {
         />
         {badge && <Badge className="absolute top-4 left-4">{badge}</Badge>}
       </div>
-      <p className="mt-4 hidden text-xs text-muted sm:block">
-        {product.productType}
-      </p>
-      <h3 className="mt-3 text-md font-medium sm:mt-1 sm:text-base">
+      <h3 className="mt-3 text-md font-medium sm:mt-4 sm:text-base">
         {product.title}
       </h3>
+      {product.subtitle && (
+        <p className="mt-1 hidden text-xs text-muted sm:block">
+          {product.subtitle}
+        </p>
+      )}
       <Price
         price={product.price}
         compareAt={product.compareAtPrice}

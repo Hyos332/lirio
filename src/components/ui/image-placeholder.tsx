@@ -2,18 +2,18 @@ import { cn } from "@/lib/cn";
 
 import { Icon } from "./icon";
 
-export type PlaceholderTone = "surface" | "surface-2" | "surface-3" | "dark-2";
-
-const tones: Record<PlaceholderTone, string> = {
+export const surfaceTones = {
   surface: "bg-surface text-muted-2",
   "surface-2": "bg-surface-2 text-muted-2",
   "surface-3": "bg-surface-3 text-muted-2",
   "dark-2": "bg-dark-2 text-muted-3",
 };
 
+export type SurfaceTone = keyof typeof surfaceTones;
+
 type ImagePlaceholderProps = {
   label: string;
-  tone?: PlaceholderTone;
+  tone?: SurfaceTone;
   withIcon?: boolean;
   className?: string;
 };
@@ -26,11 +26,10 @@ export function ImagePlaceholder({
 }: ImagePlaceholderProps) {
   return (
     <div
-      role="img"
-      aria-label={label}
+      aria-hidden
       className={cn(
         "flex flex-col items-center justify-center gap-3 overflow-hidden p-4 text-center",
-        tones[tone],
+        surfaceTones[tone],
         className,
       )}
     >
@@ -42,7 +41,7 @@ export function ImagePlaceholder({
           className="text-muted-3"
         />
       )}
-      <span aria-hidden className="font-mono text-xs tracking-wide uppercase">
+      <span className="font-mono text-xs tracking-wide uppercase">
         [{label}]
       </span>
     </div>

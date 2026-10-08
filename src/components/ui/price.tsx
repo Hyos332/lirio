@@ -12,7 +12,6 @@ const sizes: Record<PriceSize, { current: string; previous: string }> = {
 
 type PriceProps = {
   price: Money;
-  /** Precio anterior. Solo se muestra si es mayor que el precio actual. */
   compareAt?: Money | null;
   size?: PriceSize;
   className?: string;

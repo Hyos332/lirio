@@ -22,7 +22,6 @@ import {
   type LucideProps,
 } from "lucide-react";
 
-/** Set cerrado de íconos de la tienda. Para agregar uno, impórtalo de lucide-react y súmalo aquí. */
 const icons = {
   "arrow-left": ArrowLeft,
   "arrow-right": ArrowRight,
@@ -52,7 +51,6 @@ export const iconNames = Object.keys(icons) as IconName[];
 
 type IconProps = Omit<LucideProps, "ref"> & {
   name: IconName;
-  /** Texto para lectores de pantalla. Sin él, el ícono es decorativo. */
   label?: string;
 };
 

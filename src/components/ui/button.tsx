@@ -28,8 +28,7 @@ type StyleProps = {
   className?: string;
 };
 
-/** Clases de botón, para casos en los que no se puede usar <Button>. */
-export function buttonStyles({
+function buttonStyles({
   variant = "primary",
   size = "md",
   fullWidth = false,
@@ -54,7 +53,6 @@ type ButtonAsLink = OwnProps &
 
 export type ButtonProps = ButtonAsButton | ButtonAsLink;
 
-/** Botón de la tienda. Con `href` se renderiza como enlace de Next. */
 export function Button(props: ButtonProps) {
   if (props.href !== undefined) {
     const { variant, size, fullWidth, className, ...rest } = props;

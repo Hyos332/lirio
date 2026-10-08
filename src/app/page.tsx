@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 
-// Página provisional: el Inicio real se construye en la Fase 4.
 export default function Home() {
   return (
     <Container as="main" className="flex flex-1 flex-col justify-center py-24">

@@ -17,7 +17,6 @@ function getFormatter(locale: string, currencyCode: string) {
   return formatter;
 }
 
-/** Formatea un importe con la moneda que trae el propio dato. */
 export function formatMoney(money: Money, locale = DEFAULT_LOCALE) {
   return getFormatter(locale, money.currencyCode).format(Number(money.amount));
 }

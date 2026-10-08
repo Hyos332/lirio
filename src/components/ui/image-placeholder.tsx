@@ -12,16 +12,12 @@ const tones: Record<PlaceholderTone, string> = {
 };
 
 type ImagePlaceholderProps = {
-  /** Texto del recuadro, por ejemplo "Foto producto". Se muestra en mayúsculas y entre corchetes. */
   label: string;
   tone?: PlaceholderTone;
-  /** Muestra el ícono de imagen sobre el texto. */
   withIcon?: boolean;
-  /** Alto, ancho, radio y borde se pasan por clase. */
   className?: string;
 };
 
-/** Recuadro que ocupa el lugar de una imagen cuando no hay foto (modo mock). */
 export function ImagePlaceholder({
   label,
   tone = "surface-2",

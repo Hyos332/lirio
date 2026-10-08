@@ -1,13 +1,6 @@
 @import "tailwindcss";
 
-/*
- * Tokens de diseño de Lirio.
- * Los componentes solo usan estas utilidades (bg-ink, text-muted, rounded-card…).
- * La paleta por defecto de Tailwind está desactivada para que no se cuelen colores sueltos.
- */
-
 :root {
-  /* Único color de acento: cámbialo aquí y se actualiza en toda la tienda. */
   --accent: #2343d6;
 }
 
@@ -29,10 +22,8 @@
   --color-dark: #111214;
   --color-dark-2: #26282c;
   --color-dark-text: #c4c6cb;
-  /* Texto sobre fondos oscuros o de acento. */
   --color-white: #ffffff;
 
-  /* Escala tipográfica de títulos (escritorio). */
   --text-display: 4rem;
   --text-display--line-height: 1.02;
   --text-display--letter-spacing: -0.04em;
@@ -68,7 +59,6 @@
   --text-h2-sm--letter-spacing: -0.03em;
   --text-h2-sm--font-weight: 500;
 
-  /* Texto de cuerpo: 13, 14, 15, 16 y 18px. 2xs (11px) solo para el contador del carrito. */
   --text-2xs: 0.6875rem;
   --text-2xs--line-height: 1;
   --text-xs: 0.8125rem;
@@ -76,7 +66,6 @@
   --text-md: 0.9375rem;
   --text-md--line-height: 1.55;
 
-  /* Precio grande de la ficha de producto. */
   --text-price: 1.875rem;
   --text-price--line-height: 1.2;
 
@@ -88,7 +77,6 @@
   --radius-thumb: 12px;
   --radius-pill: 999px;
 
-  /* 1280px de contenido + 2 × 32px de padding lateral (max-w-page). */
   --container-page: 84rem;
 
   --ease-ui: cubic-bezier(0.2, 0, 0, 1);

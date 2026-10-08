@@ -14,93 +14,51 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-// Valores de ejemplo solo para esta vitrina.
 const samplePrice: Money = { amount: "19.99", currencyCode: "EUR" };
 const sampleCompareAt: Money = { amount: "29.99", currencyCode: "EUR" };
 
-const colors = [
-  { token: "bg", hex: "#F7F7F5", className: "bg-bg" },
-  { token: "ink", hex: "#111214", className: "bg-ink" },
-  { token: "ink-2", hex: "#3B3D42", className: "bg-ink-2" },
-  { token: "ink-3", hex: "#4A4D53", className: "bg-ink-3" },
-  { token: "muted", hex: "#5C5F66", className: "bg-muted" },
-  { token: "muted-2", hex: "#6B6E74", className: "bg-muted-2" },
-  { token: "muted-3", hex: "#8A8D93", className: "bg-muted-3" },
-  { token: "line", hex: "#E2E2DE", className: "bg-line" },
-  { token: "line-strong", hex: "#C9CAC5", className: "bg-line-strong" },
-  { token: "surface", hex: "#FFFFFF", className: "bg-surface" },
-  { token: "surface-2", hex: "#ECECE8", className: "bg-surface-2" },
-  { token: "surface-3", hex: "#DCDCD6", className: "bg-surface-3" },
-  { token: "dark", hex: "#111214", className: "bg-dark" },
-  { token: "dark-2", hex: "#26282C", className: "bg-dark-2" },
-  { token: "dark-text", hex: "#C4C6CB", className: "bg-dark-text" },
-  { token: "accent", hex: "#2343D6 (--accent)", className: "bg-accent" },
+const colorClasses = [
+  "bg-bg",
+  "bg-ink",
+  "bg-ink-2",
+  "bg-ink-3",
+  "bg-muted",
+  "bg-muted-2",
+  "bg-muted-3",
+  "bg-line",
+  "bg-line-strong",
+  "bg-surface",
+  "bg-surface-2",
+  "bg-surface-3",
+  "bg-dark",
+  "bg-dark-2",
+  "bg-dark-text",
+  "bg-accent",
 ];
 
 const typeScale = [
-  {
-    name: "display · 64px",
-    className: "text-display",
-    sample: "Tecnología que se ve bien.",
-  },
-  {
-    name: "display-sm · 36px",
-    className: "text-display-sm",
-    sample: "Hero en celular",
-  },
-  { name: "h1 · 48px", className: "text-h1", sample: "Audio" },
-  {
-    name: "h1-product · 40px",
-    className: "text-h1-product",
-    sample: "Audífonos inalámbricos",
-  },
-  {
-    name: "h2-dark · 44px",
-    className: "text-h2-dark",
-    sample: "Menos cables.",
-  },
-  { name: "h2 · 36px", className: "text-h2", sample: "Compra por categoría" },
-  { name: "h2-sm · 28px", className: "text-h2-sm", sample: "Categorías" },
-  {
-    name: "lg · 18px",
-    className: "text-lg",
-    sample: "Párrafo destacado del hero.",
-  },
-  {
-    name: "base · 16px",
-    className: "text-base",
-    sample: "Nombre de producto.",
-  },
-  {
-    name: "md · 15px",
-    className: "text-md",
-    sample: "Párrafo secundario y botones.",
-  },
-  {
-    name: "sm · 14px",
-    className: "text-sm",
-    sample: "Navegación y textos pequeños.",
-  },
-  {
-    name: "xs · 13px",
-    className: "text-xs",
-    sample: "Migas de pan y etiquetas.",
-  },
-  {
-    name: "mono · 13px",
-    className: "font-mono text-xs tracking-wide text-accent",
-    sample: "NUEVA COLECCIÓN",
-  },
-];
+  ["text-display", "Tecnología que se ve bien."],
+  ["text-display-sm", "Hero en celular"],
+  ["text-h1", "Audio"],
+  ["text-h1-product", "Audífonos inalámbricos"],
+  ["text-h2-dark", "Menos cables."],
+  ["text-h2", "Compra por categoría"],
+  ["text-h2-sm", "Categorías"],
+  ["text-lg", "Párrafo destacado del hero."],
+  ["text-base", "Nombre de producto."],
+  ["text-md", "Párrafo secundario y botones."],
+  ["text-sm", "Navegación y textos pequeños."],
+  ["text-xs", "Migas de pan y etiquetas."],
+] as const;
 
-const radii = [
-  { name: "block · 28px", className: "rounded-block" },
-  { name: "panel · 24px", className: "rounded-panel" },
-  { name: "card · 20px", className: "rounded-card" },
-  { name: "card-sm · 16px", className: "rounded-card-sm" },
-  { name: "input · 14px", className: "rounded-input" },
-  { name: "thumb · 12px", className: "rounded-thumb" },
-  { name: "pill · 999px", className: "rounded-pill" },
+const radiusClasses = [
+  "rounded-block",
+  "rounded-panel",
+  "rounded-card",
+  "rounded-card-sm",
+  "rounded-input",
+  "rounded-thumb",
+  "rounded-pill",
 ];
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
@@ -126,13 +84,14 @@ export default function UiPage() {
 
       <Section title="Colores">
         <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
-          {colors.map((color) => (
-            <li key={color.token}>
+          {colorClasses.map((className) => (
+            <li key={className}>
               <div
-                className={`h-20 rounded-card-sm border border-line ${color.className}`}
+                className={`h-20 rounded-card-sm border border-line ${className}`}
               />
-              <p className="mt-2 text-sm font-medium">{color.token}</p>
-              <p className="font-mono text-xs text-muted">{color.hex}</p>
+              <p className="mt-2 font-mono text-xs text-muted">
+                {className.replace("bg-", "")}
+              </p>
             </li>
           ))}
         </ul>
@@ -140,13 +99,13 @@ export default function UiPage() {
 
       <Section title="Tipografía">
         <ul className="flex flex-col gap-6">
-          {typeScale.map((item) => (
+          {typeScale.map(([className, sample]) => (
             <li
-              key={item.name}
+              key={className}
               className="grid gap-2 md:grid-cols-[200px_1fr] md:items-baseline"
             >
-              <span className="font-mono text-xs text-muted">{item.name}</span>
-              <span className={item.className}>{item.sample}</span>
+              <span className="font-mono text-xs text-muted">{className}</span>
+              <span className={className}>{sample}</span>
             </li>
           ))}
         </ul>
@@ -253,12 +212,12 @@ export default function UiPage() {
 
       <Section title="Radios">
         <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
-          {radii.map((radius) => (
-            <li key={radius.name}>
+          {radiusClasses.map((className) => (
+            <li key={className}>
               <div
-                className={`h-20 border border-line-strong bg-surface ${radius.className}`}
+                className={`h-20 border border-line-strong bg-surface ${className}`}
               />
-              <p className="mt-2 font-mono text-xs text-muted">{radius.name}</p>
+              <p className="mt-2 font-mono text-xs text-muted">{className}</p>
             </li>
           ))}
         </ul>

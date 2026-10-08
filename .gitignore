@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# diseño: solo se versionan los PNG extraídos
+/docs/diseno/*.zip

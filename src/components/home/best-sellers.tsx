@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, type ReactNode } from "react";
 
 import {
   ProductGrid,
@@ -12,18 +12,7 @@ import { routes } from "@/lib/routes";
 
 const COUNT = 4;
 
-async function BestSellerGrid() {
-  const country = await getCountry();
-  const { products } = await getCollectionProducts({
-    handle: collections.bestSellers,
-    country: country.isoCode,
-    sort: "best-selling",
-    first: COUNT,
-  });
-  return <ProductGrid products={products} />;
-}
-
-export function BestSellers() {
+function Section({ children }: { children: ReactNode }) {
   return (
     <section aria-labelledby="mas-vendidos">
       <SectionHeading
@@ -34,11 +23,38 @@ export function BestSellers() {
           label: "Ver todos",
         }}
       />
-      <div className="mt-6 md:mt-8">
-        <Suspense fallback={<ProductGridSkeleton count={COUNT} />}>
-          <BestSellerGrid />
-        </Suspense>
-      </div>
+      <div className="mt-6 md:mt-8">{children}</div>
     </section>
+  );
+}
+
+async function BestSellerSection() {
+  const country = await getCountry();
+  const { products } = await getCollectionProducts({
+    handle: collections.bestSellers,
+    country: country.isoCode,
+    sort: "best-selling",
+    first: COUNT,
+  });
+  if (products.length === 0) return null;
+
+  return (
+    <Section>
+      <ProductGrid products={products} />
+    </Section>
+  );
+}
+
+export function BestSellers() {
+  return (
+    <Suspense
+      fallback={
+        <Section>
+          <ProductGridSkeleton count={COUNT} />
+        </Section>
+      }
+    >
+      <BestSellerSection />
+    </Suspense>
   );
 }

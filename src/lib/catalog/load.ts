@@ -68,7 +68,7 @@ function toProductFilters(
 
 async function fetchPages(
   fetchPage: (params: PageParams) => Promise<ProductConnection>,
-  params: PageParams,
+  params: Omit<PageParams, "first" | "after">,
   pages: number,
 ) {
   const products: ProductSummary[] = [];

@@ -18,6 +18,7 @@ import { defaultCountry } from "@/lib/country";
 import { getProductBadge } from "@/lib/product";
 import { routes } from "@/lib/routes";
 import { productJsonLd } from "@/lib/seo";
+import { handleParams } from "@/lib/static-params";
 
 const loadProduct = (handle: string) =>
   getProduct({ handle, country: defaultCountry });
@@ -29,7 +30,7 @@ export async function generateStaticParams() {
     sort: "best-selling",
     first: 24,
   });
-  return products.map((product) => ({ handle: product.handle }));
+  return handleParams(products.map((product) => product.handle));
 }
 
 export async function generateMetadata({

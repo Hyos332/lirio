@@ -7,6 +7,7 @@ import { routes } from "@/lib/routes";
 
 export async function Categories() {
   const categories = await getCategories();
+  if (categories.length === 0) return null;
 
   return (
     <section aria-labelledby="categorias">

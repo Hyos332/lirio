@@ -5,10 +5,11 @@ import { Catalog } from "@/components/catalog/catalog";
 import { CategoryChips } from "@/components/collection/category-chips";
 import { getCategories } from "@/lib/categories";
 import { getCollection, getCollections } from "@/lib/commerce";
+import { handleParams } from "@/lib/static-params";
 
 export async function generateStaticParams() {
   const collections = await getCollections();
-  return collections.map((collection) => ({ handle: collection.handle }));
+  return handleParams(collections.map((collection) => collection.handle));
 }
 
 export async function generateMetadata({

@@ -2,8 +2,11 @@ import "server-only";
 
 import { cacheLife, cacheTag } from "next/cache";
 
+import { categoryHandles } from "@/config/collections";
+import { store } from "@/config/store";
 import { env } from "@/env";
 
+import { cacheTags } from "./cache-tags";
 import { mockProvider } from "./mock";
 import type {
   CollectionProductsParams,
@@ -12,23 +15,25 @@ import type {
   RecommendationsParams,
   SearchParams,
 } from "./provider";
+import { createShopifyProvider } from "./shopify";
 
 export type * from "./types";
 export type * from "./provider";
 
-const providers: Record<typeof env.COMMERCE_PROVIDER, CommerceProvider> = {
-  mock: mockProvider,
-};
-
-const provider = providers[env.COMMERCE_PROVIDER];
+const provider: CommerceProvider =
+  env.COMMERCE_PROVIDER === "shopify"
+    ? createShopifyProvider({
+        domain: env.SHOPIFY_STORE_DOMAIN,
+        token: env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+        apiVersion: env.SHOPIFY_API_VERSION,
+        language: store.language,
+        categoryHandles,
+      })
+    : mockProvider;
 
 export const accountUrl = provider.accountUrl;
 
-export const cacheTags = {
-  products: "products",
-  collections: "collections",
-  content: "content",
-} as const;
+export { cacheTags };
 
 export async function getCountries() {
   "use cache";

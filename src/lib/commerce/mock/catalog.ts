@@ -23,8 +23,6 @@ import {
   type MockVariant,
 } from "./data";
 
-const PAGE_SIZE = 12;
-
 const money = (amount: string, currencyCode: string): Money => ({
   amount,
   currencyCode,
@@ -272,7 +270,7 @@ function buildFilters(products: MockProduct[]): Filter[] {
 
 export function listProducts(
   source: MockProduct[],
-  { country, sort, filters = [], first = PAGE_SIZE, after }: ProductListParams,
+  { country, sort, filters = [], first, after }: ProductListParams,
 ): ProductConnection {
   const currencyCode = currencyFor(country);
   const matching = sortProducts(applyFilters(source, filters), sort);

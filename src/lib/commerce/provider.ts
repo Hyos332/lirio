@@ -17,7 +17,7 @@ export type ProductListParams = {
   country: string;
   sort?: ProductSort;
   filters?: ProductFilter[];
-  first?: number;
+  first: number;
   after?: string | null;
 };
 

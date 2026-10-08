@@ -97,7 +97,7 @@ export function toProduct(product: MockProduct, currencyCode: string): Product {
     ...toSummary(product, currencyCode),
     vendor: store.name,
     description: product.description,
-    descriptionHtml: `<p>${product.description}</p><ul>${features}</ul>`,
+    descriptionHtml: `<ul>${features}</ul>`,
     images: [],
     options: product.options.map((option) => ({
       name: option.name,

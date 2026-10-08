@@ -53,7 +53,7 @@ export function Picture({
         fill
         sizes={sizes}
         preload={preload}
-        className={fit === "cover" ? "object-cover" : "object-contain p-6"}
+        className={fit === "cover" ? "object-cover" : "object-contain p-[6%]"}
       />
     </div>
   );

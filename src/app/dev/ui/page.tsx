@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import { ProductGallery } from "@/components/product/product-gallery";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
@@ -12,7 +13,7 @@ import { ImagePlaceholder } from "@/components/ui/image-placeholder";
 import { Price } from "@/components/ui/price";
 import { Select } from "@/components/ui/select";
 import { TextLink } from "@/components/ui/text-link";
-import type { Money } from "@/lib/commerce/types";
+import type { Image, Money } from "@/lib/commerce/types";
 
 export const metadata: Metadata = {
   title: "Componentes",
@@ -21,6 +22,13 @@ export const metadata: Metadata = {
 
 const samplePrice: Money = { amount: "19.99", currencyCode: "EUR" };
 const sampleCompareAt: Money = { amount: "29.99", currencyCode: "EUR" };
+
+const galleryImages: Image[] = [1, 2, 3, 4].map((index) => ({
+  url: `/dev/galeria-${index}.svg`,
+  altText: `Imagen de prueba ${index}`,
+  width: 1200,
+  height: 1200,
+}));
 
 const colorClasses = [
   "bg-bg",
@@ -244,6 +252,12 @@ export default function UiPage() {
             tone="dark-2"
             className="h-65 rounded-panel"
           />
+        </div>
+      </Section>
+
+      <Section title="Galería de producto">
+        <div className="max-w-2xl">
+          <ProductGallery images={galleryImages} title="Producto de prueba" />
         </div>
       </Section>
 

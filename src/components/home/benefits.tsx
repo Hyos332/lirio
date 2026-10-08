@@ -1,5 +1,5 @@
 import { Icon, type IconName } from "@/components/ui/icon";
-import { store } from "@/config/store";
+import { policies } from "@/lib/policies";
 
 type Benefit = { icon: IconName; title: string; detail: string | null };
 
@@ -7,17 +7,14 @@ const benefits: Benefit[] = [
   {
     icon: "truck",
     title: "Envío rápido",
-    detail: store.shippingDays
-      ? `${store.shippingDays.min}–${store.shippingDays.max} días hábiles`
-      : null,
+    detail: policies.shippingDays && `${policies.shippingDays} hábiles`,
   },
   { icon: "shield", title: "Pago seguro", detail: "Tarjeta, PayPal y más" },
   {
     icon: "returns",
     title: "Devolución fácil",
-    detail: store.returnDays
-      ? `${store.returnDays} días para cambiar de idea`
-      : null,
+    detail:
+      policies.returnDays && `${policies.returnDays} para cambiar de idea`,
   },
   {
     icon: "support",

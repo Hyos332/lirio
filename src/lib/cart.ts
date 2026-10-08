@@ -3,7 +3,8 @@ import "server-only";
 import { cookies } from "next/headers";
 import { cache } from "react";
 
-import { getCart, type Cart } from "@/lib/commerce";
+import { createCart, getCart, type Cart } from "@/lib/commerce";
+import { getCountry } from "@/lib/country";
 
 import { DAY, setPersistentCookie } from "./cookies";
 
@@ -16,4 +17,11 @@ export const getCurrentCart = cache(async () => {
 
 export async function saveCart(cart: Cart) {
   await setPersistentCookie(CART_COOKIE, cart.id, 30 * DAY);
+}
+
+export async function getOrCreateCart() {
+  const cart = await getCurrentCart();
+  if (cart) return cart;
+  const country = await getCountry();
+  return createCart(country.isoCode);
 }

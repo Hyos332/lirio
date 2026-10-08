@@ -8,6 +8,8 @@ import { getCountries } from "@/lib/commerce";
 
 export const COUNTRY_COOKIE = "country";
 
+export const defaultCountry = env.SHOPIFY_COUNTRY;
+
 const GEO_HEADERS = ["x-vercel-ip-country", "cf-ipcountry"];
 
 export const getCountry = cache(async () => {

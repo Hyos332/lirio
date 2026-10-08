@@ -1,19 +1,23 @@
-import { Button } from "@/components/ui/button";
+import { Benefits } from "@/components/home/benefits";
+import { BestSellers } from "@/components/home/best-sellers";
+import { Categories } from "@/components/home/categories";
+import { Hero } from "@/components/home/hero";
+import { Newsletter } from "@/components/home/newsletter";
+import { SetupBanner } from "@/components/home/setup-banner";
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
 
 export default function Home() {
   return (
-    <Container className="py-24">
-      <Eyebrow>En construcción</Eyebrow>
-      <h1 className="mt-4 text-display-sm md:text-display">
-        lirio<span className="text-accent">.</span>
-      </h1>
-      <p className="mt-6 max-w-xl text-lg text-ink-3">
-        Tecnología seleccionada con buen gusto.
-      </p>
-      <div className="mt-10">
-        <Button href="/dev/ui">Ver componentes</Button>
+    <Container className="pt-2 pb-16 lg:pt-6 lg:pb-20">
+      <Hero />
+      <div className="mt-6 lg:mt-8">
+        <Benefits />
+      </div>
+      <div className="mt-16 flex flex-col gap-16 lg:mt-20 lg:gap-20">
+        <Categories />
+        <BestSellers />
+        <SetupBanner />
+        <Newsletter />
       </div>
     </Container>
   );

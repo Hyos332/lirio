@@ -2,6 +2,7 @@ import { StoreShell } from "@/components/layout/store-shell";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { collections } from "@/config/collections";
 import { routes } from "@/lib/routes";
 
 export default function NotFound() {
@@ -17,7 +18,7 @@ export default function NotFound() {
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <Button href={routes.home}>Volver al inicio</Button>
-          <Button href={routes.collection("todo")} variant="secondary">
+          <Button href={routes.collection(collections.all)} variant="secondary">
             Ver productos
           </Button>
         </div>

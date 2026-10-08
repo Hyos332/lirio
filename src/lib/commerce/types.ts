@@ -166,6 +166,7 @@ export type Cart = {
   lines: CartLine[];
   subtotal: Money;
   total: Money;
+  discount: Money | null;
   discountCodes: DiscountCode[];
 };
 

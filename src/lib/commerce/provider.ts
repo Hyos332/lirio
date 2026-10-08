@@ -33,6 +33,7 @@ export type CommerceProvider = {
   accountUrl: string | null;
 
   getCountries(): Promise<Country[]>;
+  getPaymentMethods(): Promise<string[]>;
   getMenu(handle: string): Promise<MenuItem[]>;
   getCollections(): Promise<Collection[]>;
   getCollection(handle: string): Promise<Collection | null>;

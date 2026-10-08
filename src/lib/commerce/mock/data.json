@@ -6,6 +6,7 @@
     { "isoCode": "US", "name": "Estados Unidos", "currencyCode": "USD" },
     { "isoCode": "MX", "name": "México", "currencyCode": "MXN" }
   ],
+  "paymentMethods": ["Visa", "Mastercard", "American Express", "PayPal"],
   "discountCodes": [{ "code": "PRUEBA10", "percentage": 10 }],
   "swatches": {
     "Negro": "#111214",

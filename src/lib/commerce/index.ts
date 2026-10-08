@@ -37,6 +37,13 @@ export async function getCountries() {
   return provider.getCountries();
 }
 
+export async function getPaymentMethods() {
+  "use cache";
+  cacheTag(cacheTags.content);
+  cacheLife("days");
+  return provider.getPaymentMethods();
+}
+
 export async function getMenu(handle: string) {
   "use cache";
   cacheTag(cacheTags.content);

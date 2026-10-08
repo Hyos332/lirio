@@ -36,6 +36,10 @@ export const mockProvider: CommerceProvider = {
     return data.countries;
   },
 
+  async getPaymentMethods() {
+    return data.paymentMethods;
+  },
+
   async getMenu(handle) {
     return (data.menus[handle] ?? []).map((item) => ({ ...item, items: [] }));
   },

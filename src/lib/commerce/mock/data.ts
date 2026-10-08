@@ -9,6 +9,7 @@ const schema = z.object({
   countries: z
     .array(z.object({ isoCode: text, name: text, currencyCode: text }))
     .nonempty(),
+  paymentMethods: z.array(text),
   discountCodes: z.array(
     z.object({ code: text, percentage: z.number().positive().max(100) }),
   ),

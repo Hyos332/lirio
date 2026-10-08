@@ -1,12 +1,8 @@
 import { z } from "zod";
 
-import type {
-  Cart,
-  CartLine,
-  CartLineInput,
-  CartLineUpdate,
-  Money,
-} from "../types";
+import { fromCents, toCents } from "@/lib/money";
+
+import type { Cart, CartLine, CartLineInput, CartLineUpdate } from "../types";
 import { currencyFor, data, type MockProduct, type MockVariant } from "./data";
 import { toVariant } from "./catalog";
 
@@ -33,13 +29,6 @@ const variants = new Map<
     ),
   ),
 );
-
-const toCents = (money: Money) => Math.round(Number(money.amount) * 100);
-
-const fromCents = (cents: number, currencyCode: string): Money => ({
-  amount: (cents / 100).toFixed(2),
-  currencyCode,
-});
 
 export function emptyCart(country: string): CartState {
   return { country, lines: [], codes: [] };
@@ -142,6 +131,7 @@ export function buildCart(state: CartState): Cart {
     0,
     ...state.codes.map((code) => findDiscount(code)?.percentage ?? 0),
   );
+  const discount = Math.round((subtotal * percentage) / 100);
 
   return {
     id: encodeCart(state),
@@ -149,10 +139,8 @@ export function buildCart(state: CartState): Cart {
     totalQuantity: lines.reduce((sum, line) => sum + line.quantity, 0),
     lines,
     subtotal: fromCents(subtotal, currencyCode),
-    total: fromCents(
-      Math.round(subtotal * (1 - percentage / 100)),
-      currencyCode,
-    ),
+    total: fromCents(subtotal - discount, currencyCode),
+    discount: discount > 0 ? fromCents(discount, currencyCode) : null,
     discountCodes: state.codes.map((code) => ({
       code,
       applicable: Boolean(findDiscount(code)),

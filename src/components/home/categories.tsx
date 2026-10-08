@@ -1,15 +1,12 @@
 import { CategoryCard } from "@/components/collection/category-card";
 import { CategoryChips } from "@/components/collection/category-chips";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { categoryHandles, collections } from "@/config/collections";
-import { getCollections } from "@/lib/commerce";
+import { collections } from "@/config/collections";
+import { getCategories } from "@/lib/categories";
 import { routes } from "@/lib/routes";
 
 export async function Categories() {
-  const all = await getCollections();
-  const categories = categoryHandles.flatMap(
-    (handle) => all.find((collection) => collection.handle === handle) ?? [],
-  );
+  const categories = await getCategories();
 
   return (
     <section aria-labelledby="categorias">

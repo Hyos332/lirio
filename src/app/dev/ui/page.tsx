@@ -3,10 +3,15 @@ import type { ReactNode } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { Icon, iconNames } from "@/components/ui/icon";
+import { IconButton } from "@/components/ui/icon-button";
 import { ImagePlaceholder } from "@/components/ui/image-placeholder";
 import { Price } from "@/components/ui/price";
+import { Select } from "@/components/ui/select";
+import { TextLink } from "@/components/ui/text-link";
 import type { Money } from "@/lib/commerce/types";
 
 export const metadata: Metadata = {
@@ -73,13 +78,10 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 export default function UiPage() {
   return (
     <Container as="main" className="py-16">
-      <p className="font-mono text-xs tracking-wide text-muted uppercase">
-        Lirio · /dev/ui
-      </p>
+      <Eyebrow>Lirio · /dev/ui</Eyebrow>
       <h1 className="mt-3 mb-4 text-h1-product md:text-h1">Componentes base</h1>
       <p className="mb-12 max-w-2xl text-md text-ink-2">
-        Vitrina de los tokens de diseño y los componentes de la Fase 1. Sirve
-        para revisar el estilo antes de construir las páginas.
+        Vitrina de los tokens de diseño y los componentes base.
       </p>
 
       <Section title="Colores">
@@ -144,6 +146,41 @@ export default function UiPage() {
               Ancho completo (celular)
             </Button>
           </div>
+        </div>
+      </Section>
+
+      <Section title="Enlaces y controles">
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-wrap items-center gap-6">
+            <TextLink href="/dev/ui">Ver todo</TextLink>
+            <TextLink tone="muted" className="text-sm">
+              Eliminar
+            </TextLink>
+            <TextLink href="/dev/ui" underline={false} className="text-md">
+              <Icon name="arrow-left" size={16} />
+              Seguir comprando
+            </TextLink>
+          </div>
+          <div className="flex items-center gap-2">
+            <IconButton icon="search" label="Buscar" />
+            <IconButton icon="user" label="Mi cuenta" />
+            <IconButton icon="menu" label="Menú" />
+          </div>
+          <Select
+            aria-label="Ordenar por"
+            defaultValue="best-selling"
+            className="w-60"
+          >
+            <option value="best-selling">Más vendidos</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+          </Select>
+          <Breadcrumbs
+            items={[
+              { title: "Inicio", href: "/" },
+              { title: "Audio", href: "/dev/ui" },
+              { title: "Audífonos" },
+            ]}
+          />
         </div>
       </Section>
 

@@ -22,6 +22,8 @@ const providers: Record<typeof env.COMMERCE_PROVIDER, CommerceProvider> = {
 
 const provider = providers[env.COMMERCE_PROVIDER];
 
+export const accountUrl = provider.accountUrl;
+
 export const cacheTags = {
   products: "products",
   collections: "collections",

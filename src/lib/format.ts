@@ -18,3 +18,7 @@ function getFormatter(currencyCode: string) {
 export function formatMoney(money: Money) {
   return getFormatter(money.currencyCode).format(Number(money.amount));
 }
+
+export function pluralize(count: number, singular: string, plural: string) {
+  return `${count} ${count === 1 ? singular : plural}`;
+}

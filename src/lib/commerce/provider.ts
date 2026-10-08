@@ -30,6 +30,8 @@ export type ProductParams = { handle: string; country: string };
 export type RecommendationsParams = { productId: string; country: string };
 
 export type CommerceProvider = {
+  accountUrl: string | null;
+
   getCountries(): Promise<Country[]>;
   getMenu(handle: string): Promise<MenuItem[]>;
   getCollections(): Promise<Collection[]>;

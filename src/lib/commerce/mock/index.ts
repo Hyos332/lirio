@@ -30,6 +30,8 @@ function mutateCart(
 }
 
 export const mockProvider: CommerceProvider = {
+  accountUrl: null,
+
   async getCountries() {
     return data.countries;
   },

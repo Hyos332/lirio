@@ -36,13 +36,13 @@ function CheckboxOptions({ group, selected, onToggle }: OptionsProps) {
                 type="checkbox"
                 checked={selected.includes(option.value)}
                 onChange={() => onToggle(option.value)}
-                className="peer size-5 cursor-pointer appearance-none rounded-checkbox border border-line-strong bg-surface transition-colors checked:border-ink checked:bg-ink"
+                className="peer size-5 cursor-pointer appearance-none rounded-checkbox border border-line-strong bg-surface transition-colors checked:border-accent checked:bg-accent"
               />
               <Icon
                 name="check"
                 size={14}
                 strokeWidth={2}
-                className="pointer-events-none absolute text-white opacity-0 peer-checked:opacity-100"
+                className="pointer-events-none absolute scale-50 text-white opacity-0 transition duration-200 peer-checked:scale-100 peer-checked:opacity-100"
               />
             </span>
             {option.label}

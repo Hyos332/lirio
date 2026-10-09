@@ -102,10 +102,7 @@ export function CatalogResultsSkeleton() {
     <div aria-hidden className={layoutClassName}>
       <div className="hidden flex-col gap-4 lg:flex">
         {Array.from({ length: 6 }, (_, index) => (
-          <div
-            key={index}
-            className="h-5 w-3/4 animate-pulse rounded-pill bg-surface-2"
-          />
+          <div key={index} className="h-5 w-3/4 skeleton rounded-pill" />
         ))}
       </div>
       <ProductGridSkeleton count={6} columns={3} />

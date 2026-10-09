@@ -38,7 +38,7 @@ export function Catalog({
       />
       <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0">
-          <h1 className="text-h2-sm md:text-h1">{title}</h1>
+          <h1 className="font-display text-h2-sm md:text-h1">{title}</h1>
           {description && (
             <p className="mt-3 max-w-2xl text-md text-muted lg:text-base">
               {description}

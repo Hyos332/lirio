@@ -10,10 +10,12 @@ export async function SetupBanner() {
 
   return (
     <section className="relative grid items-center gap-12 overflow-hidden rounded-block bg-dark p-6 text-white md:grid-cols-2 md:p-12 lg:p-16">
+      <div className="pointer-events-none absolute -right-24 -bottom-32 size-96 animate-breathe rounded-pill bg-accent blur-3xl" />
       <Lily
+        tone="line"
         trigger="scroll"
         sway
-        className="pointer-events-none absolute -right-2 -bottom-24 hidden h-72 text-ink-2 md:block"
+        className="pointer-events-none absolute -right-2 -bottom-24 hidden h-72 text-dark-text/40 md:block"
       />
       <div className="hidden md:block">
         <Picture
@@ -22,11 +24,11 @@ export async function SetupBanner() {
           placeholder="Foto estilo de vida"
           tone="dark-2"
           sizes="(min-width: 768px) 40vw, 0px"
-          className="h-85 rounded-panel"
+          className="h-85 rounded-t-pill rounded-b-panel"
         />
       </div>
       <div className="relative">
-        <h2 className="text-h2-sm md:text-h2-dark">
+        <h2 className="font-display text-h2-sm md:text-h2-dark">
           Menos cables. Más orden en tu escritorio.
         </h2>
         <p className="mt-4 max-w-md text-md text-dark-text md:mt-5 md:text-lg">

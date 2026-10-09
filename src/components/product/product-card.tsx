@@ -8,14 +8,14 @@ import type { ProductSummary } from "@/lib/commerce/types";
 import { getProductBadge, morphName } from "@/lib/product";
 import { routes } from "@/lib/routes";
 
-const imageClassName = "h-48 rounded-card md:h-75";
+const imageClassName = "h-48 rounded-card rounded-bl-checkbox md:h-75";
 
 export function ProductCard({ product }: { product: ProductSummary }) {
   const badge = getProductBadge(product.tags);
 
   return (
     <Link href={routes.product(product.handle)} className="group block">
-      <div className="relative">
+      <div className="relative transition duration-500 group-hover:-translate-y-1.5">
         <ViewTransition
           name={morphName(product.handle)}
           share="morph"
@@ -25,15 +25,19 @@ export function ProductCard({ product }: { product: ProductSummary }) {
             image={product.featuredImage}
             alt=""
             placeholder="Foto producto"
-            tone="surface"
+            tone="surface-2"
             fit="contain"
             sizes="(min-width: 1024px) 25vw, 50vw"
-            className={`${imageClassName} border border-line transition-colors group-hover:border-line-strong [&_img]:transition-transform [&_img]:duration-500 group-hover:[&_img]:scale-[1.03]`}
+            className={`${imageClassName} transition-shadow duration-500 group-hover:shadow-lift [&_img]:transition-transform [&_img]:duration-700 group-hover:[&_img]:scale-[1.05]`}
           />
         </ViewTransition>
-        {badge && <Badge className="absolute top-4 left-4">{badge}</Badge>}
+        {badge && (
+          <Badge variant={badge.variant} className="absolute top-4 left-4">
+            {badge.label}
+          </Badge>
+        )}
       </div>
-      <h3 className="mt-3 text-md font-medium sm:mt-4 sm:text-base">
+      <h3 className="mt-3 text-md font-medium transition-colors group-hover:text-accent sm:mt-4 sm:text-base">
         {product.title}
       </h3>
       {product.subtitle && (
@@ -53,10 +57,10 @@ export function ProductCard({ product }: { product: ProductSummary }) {
 
 export function ProductCardSkeleton() {
   return (
-    <div aria-hidden className="animate-pulse">
-      <div className={`${imageClassName} bg-surface-2`} />
-      <div className="mt-4 h-4 w-2/3 rounded-pill bg-surface-2" />
-      <div className="mt-3 h-4 w-1/3 rounded-pill bg-surface-2" />
+    <div aria-hidden>
+      <div className={`${imageClassName} skeleton`} />
+      <div className="mt-4 h-4 w-2/3 skeleton rounded-pill" />
+      <div className="mt-3 h-4 w-1/3 skeleton rounded-pill" />
     </div>
   );
 }

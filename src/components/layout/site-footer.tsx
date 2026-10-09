@@ -20,6 +20,7 @@ export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-surface-2">
       <Lily
+        tone="line"
         trigger="scroll"
         className="pointer-events-none absolute -bottom-24 left-1/3 hidden h-96 text-line-strong lg:block"
       />
@@ -40,7 +41,7 @@ export function SiteFooter() {
                   <li key={link.path}>
                     <Link
                       href={link.path}
-                      className="inline-flex min-h-11 items-center text-sm text-ink-2 transition-colors hover:text-ink lg:min-h-7"
+                      className="inline-flex min-h-11 items-center text-sm text-ink-2 transition hover:translate-x-0.5 hover:text-accent lg:min-h-7"
                     >
                       {link.title}
                     </Link>

@@ -16,7 +16,7 @@ export default function NotFound() {
           <BlurText
             as="h1"
             text="No encontramos esta página"
-            className="mt-4 max-w-2xl text-h2-sm md:text-h1"
+            className="mt-4 max-w-2xl font-display text-h2-sm md:text-h1"
           />
           <p className="mt-4 max-w-xl text-lg text-ink-3">
             Puede que el enlace esté roto o que la página ya no exista.
@@ -31,7 +31,7 @@ export default function NotFound() {
             </Button>
           </div>
         </div>
-        <Lily sway className="hidden h-96 text-ink lg:block" />
+        <Lily sway className="hidden h-96 text-accent lg:block" />
       </Container>
     </StoreShell>
   );

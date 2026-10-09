@@ -81,7 +81,7 @@ function OptionGroup({
                 <span
                   aria-hidden
                   className={cn(
-                    "inline-flex h-11 items-center rounded-pill border border-line-strong px-5 text-md transition-colors peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-disabled:text-muted-3 peer-disabled:line-through",
+                    "inline-flex h-11 items-center rounded-pill border border-line-strong px-5 text-md transition-colors peer-checked:border-accent peer-checked:bg-accent peer-checked:text-white peer-disabled:text-muted-3 peer-disabled:line-through hover:border-accent",
                     focusRing,
                   )}
                 >

@@ -20,7 +20,7 @@ export function CartPageView({ paymentMethods }: { paymentMethods: string[] }) {
 
   return (
     <>
-      <h1 className="text-h2-sm md:text-h1">
+      <h1 className="font-display text-h2-sm md:text-h1">
         Tu carrito <span className="text-muted">({count})</span>
       </h1>
       {!cart || count === 0 ? (
@@ -39,16 +39,19 @@ export function CartPageView({ paymentMethods }: { paymentMethods: string[] }) {
             aria-labelledby="resumen"
             className="rounded-panel border border-line bg-surface p-6 lg:p-8"
           >
-            <h2 id="resumen" className="text-h2-sm">
+            <h2 id="resumen" className="font-display text-h2-sm">
               Resumen
             </h2>
             <dl className="mt-6 flex flex-col gap-3">
               <SummaryRow label="Subtotal">
-                <AnimatedMoney money={cart.subtotal} className="font-mono" />
+                <AnimatedMoney
+                  money={cart.subtotal}
+                  className="font-medium tabular-nums"
+                />
               </SummaryRow>
               {cart.discount && (
                 <SummaryRow label="Descuento">
-                  <span className="font-mono">
+                  <span className="font-medium tabular-nums">
                     −{formatMoney(cart.discount)}
                   </span>
                 </SummaryRow>
@@ -60,7 +63,10 @@ export function CartPageView({ paymentMethods }: { paymentMethods: string[] }) {
             </div>
             <dl className="mt-5 border-t border-line pt-5">
               <SummaryRow label="Total" emphasis>
-                <AnimatedMoney money={cart.total} className="font-mono" />
+                <AnimatedMoney
+                  money={cart.total}
+                  className="font-medium tabular-nums"
+                />
               </SummaryRow>
             </dl>
             <div className="mt-6">
@@ -120,11 +126,16 @@ export function CartDrawerView({ onNavigate }: { onNavigate: () => void }) {
         <dl className="flex flex-col gap-2">
           {cart.discount && (
             <SummaryRow label="Descuento">
-              <span className="font-mono">−{formatMoney(cart.discount)}</span>
+              <span className="font-medium tabular-nums">
+                −{formatMoney(cart.discount)}
+              </span>
             </SummaryRow>
           )}
           <SummaryRow label="Subtotal" emphasis>
-            <AnimatedMoney money={cart.total} className="font-mono" />
+            <AnimatedMoney
+              money={cart.total}
+              className="font-medium tabular-nums"
+            />
           </SummaryRow>
         </dl>
         <p className="mt-1 text-xs text-muted">

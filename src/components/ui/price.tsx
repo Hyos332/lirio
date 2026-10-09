@@ -28,11 +28,11 @@ export function Price({
   return (
     <span
       className={cn(
-        "inline-flex flex-wrap items-baseline gap-x-2.5 font-mono",
+        "inline-flex flex-wrap items-baseline gap-x-2.5 tabular-nums",
         className,
       )}
     >
-      <span className={cn("text-ink", sizes[size].current)}>
+      <span className={cn("font-medium text-accent", sizes[size].current)}>
         {onSale && <span className="sr-only">Precio de oferta: </span>}
         {formatMoney(price)}
       </span>

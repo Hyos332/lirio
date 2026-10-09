@@ -47,14 +47,14 @@ export function Drawer({
         if (event.target === event.currentTarget) onClose();
       }}
       className={cn(
-        "fixed inset-y-0 m-0 h-dvh max-h-none w-full max-w-sm bg-bg p-0 text-ink transition-[translate,display,overlay] transition-discrete duration-200 open:translate-x-0",
-        "backdrop:bg-ink/40 backdrop:transition-[background-color,display,overlay] backdrop:transition-discrete backdrop:duration-200 starting:open:backdrop:bg-ink/0",
+        "fixed inset-y-0 m-0 h-dvh max-h-none w-full max-w-sm bg-bg p-0 text-ink transition-[translate,display,overlay] transition-discrete duration-300 open:translate-x-0",
+        "backdrop:bg-dark/40 backdrop:backdrop-blur-sm backdrop:transition-[background-color,backdrop-filter,display,overlay] backdrop:transition-discrete backdrop:duration-300 starting:open:backdrop:bg-dark/0 starting:open:backdrop:backdrop-blur-none",
         sides[side],
       )}
     >
       <div className="flex h-full flex-col">
         <div className="flex h-16 shrink-0 items-center justify-between border-b border-line pr-2 pl-4">
-          <h2 id={titleId} className="text-lg font-medium">
+          <h2 id={titleId} className="font-display text-h2-sm">
             {title}
           </h2>
           <IconButton icon="close" label="Cerrar" onClick={onClose} />

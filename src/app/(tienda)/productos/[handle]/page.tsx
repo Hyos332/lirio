@@ -95,9 +95,9 @@ export default async function ProductPage({
           images={product.images}
           title={product.title}
         />
-        <div>
-          {badge && <Badge>{badge}</Badge>}
-          <h1 className="mt-3 text-h2-sm md:text-h1-product">
+        <div className="animate-rise [animation-delay:120ms]">
+          {badge && <Badge variant={badge.variant}>{badge.label}</Badge>}
+          <h1 className="mt-3 font-display text-h2-sm md:text-h1-product">
             {product.title}
           </h1>
           {/* TODO: conectar una app de reseñas para mostrar las estrellas y "{N} reseñas". */}

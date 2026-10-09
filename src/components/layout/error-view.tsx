@@ -11,7 +11,7 @@ export function ErrorView({ error, retry }: ErrorViewProps) {
   return (
     <Container className="py-24 lg:py-32">
       <Eyebrow>Algo salió mal</Eyebrow>
-      <h1 className="mt-4 max-w-2xl text-h2-sm md:text-h1">
+      <h1 className="mt-4 max-w-2xl font-display text-h2-sm md:text-h1">
         No pudimos cargar esta página
       </h1>
       <p className="mt-4 max-w-xl text-lg text-ink-3">

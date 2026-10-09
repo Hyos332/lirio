@@ -16,7 +16,7 @@ export function IconButton({
     <Action
       aria-label={label}
       className={cn(
-        "relative inline-flex size-11 shrink-0 items-center justify-center rounded-pill text-ink transition-colors hover:bg-ink/5",
+        "relative inline-flex size-11 shrink-0 items-center justify-center rounded-pill text-ink transition-colors hover:bg-surface-2 hover:text-accent",
         className,
       )}
       {...(props as ActionProps)}

@@ -48,16 +48,21 @@ const colorClasses = [
   "bg-dark-2",
   "bg-dark-text",
   "bg-accent",
+  "bg-accent-strong",
+  "bg-lilac",
+  "bg-lilac-2",
+  "bg-rose",
+  "bg-stem",
 ];
 
 const typeScale = [
-  ["text-display", "Tecnología que se ve bien."],
-  ["text-display-sm", "Hero en celular"],
-  ["text-h1", "Audio"],
-  ["text-h1-product", "Audífonos inalámbricos"],
-  ["text-h2-dark", "Menos cables."],
-  ["text-h2", "Compra por categoría"],
-  ["text-h2-sm", "Categorías"],
+  ["font-display text-display", "Tecnología que se ve bien."],
+  ["font-display text-display-sm", "Hero en celular"],
+  ["font-display text-h1", "Audio"],
+  ["font-display text-h1-product", "Audífonos inalámbricos"],
+  ["font-display text-h2-dark", "Menos cables."],
+  ["font-display text-h2", "Compra por categoría"],
+  ["font-display text-h2-sm", "Categorías"],
   ["text-lg", "Párrafo destacado del hero."],
   ["text-base", "Nombre de producto."],
   ["text-md", "Párrafo secundario y botones."],
@@ -78,7 +83,7 @@ const radiusClasses = [
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section className="border-t border-line py-12">
-      <h2 className="mb-8 text-h2-sm">{title}</h2>
+      <h2 className="mb-8 font-display text-h2-sm">{title}</h2>
       {children}
     </section>
   );
@@ -88,7 +93,9 @@ export default function UiPage() {
   return (
     <Container as="main" className="py-16">
       <Eyebrow>Lirio · /dev/ui</Eyebrow>
-      <h1 className="mt-3 mb-4 text-h1-product md:text-h1">Componentes base</h1>
+      <h1 className="mt-3 mb-4 font-display text-h1-product md:text-h1">
+        Componentes base
+      </h1>
       <p className="mb-12 max-w-2xl text-md text-ink-2">
         Vitrina de los tokens de diseño y los componentes base.
       </p>
@@ -145,6 +152,7 @@ export default function UiPage() {
           </div>
           <div className="flex flex-wrap items-center gap-3 rounded-block bg-dark p-8">
             <Button variant="inverted">Explorar setup</Button>
+            <Button variant="outline-inverted">Ofertas de la semana</Button>
             <Button href="/dev/ui" variant="inverted">
               Como enlace
               <Icon name="arrow-right" size={18} />
@@ -196,7 +204,7 @@ export default function UiPage() {
       <Section title="Badges">
         <div className="flex flex-wrap items-center gap-3">
           <Badge>Más vendido</Badge>
-          <Badge>Nuevo</Badge>
+          <Badge variant="soft">Nuevo</Badge>
           <Badge>Oferta</Badge>
           <span className="relative inline-flex size-11 items-center justify-center">
             <Icon name="bag" label="Carrito" />

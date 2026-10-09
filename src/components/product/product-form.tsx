@@ -105,12 +105,12 @@ export function ProductForm({ product, children }: ProductFormProps) {
 
 export function ProductFormSkeleton() {
   return (
-    <div aria-hidden className="mt-5 animate-pulse">
-      <div className="h-9 w-40 rounded-pill bg-surface-2" />
-      <div className="mt-6 h-5 w-full rounded-pill bg-surface-2" />
-      <div className="mt-2 h-5 w-2/3 rounded-pill bg-surface-2" />
-      <div className="mt-10 h-14 w-full rounded-pill bg-surface-2" />
-      <div className="mt-3 h-14 w-full rounded-pill bg-surface-2" />
+    <div aria-hidden className="mt-5">
+      <div className="h-9 w-40 skeleton rounded-pill" />
+      <div className="mt-6 h-5 w-full skeleton rounded-pill" />
+      <div className="mt-2 h-5 w-2/3 skeleton rounded-pill" />
+      <div className="mt-10 h-14 w-full skeleton rounded-pill" />
+      <div className="mt-3 h-14 w-full skeleton rounded-pill" />
     </div>
   );
 }

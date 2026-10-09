@@ -27,7 +27,7 @@ export function CategoryChips({
           <Link
             href={routes.collection(category.handle)}
             aria-current={category.handle === activeHandle ? "page" : undefined}
-            className="inline-flex h-11 items-center rounded-pill border border-line-strong px-5 text-md transition-colors hover:border-ink aria-[current=page]:border-ink aria-[current=page]:bg-ink aria-[current=page]:text-white"
+            className="inline-flex h-11 items-center rounded-pill border border-line-strong px-5 text-md transition-colors hover:border-accent hover:text-accent aria-[current=page]:border-accent aria-[current=page]:bg-accent aria-[current=page]:text-white"
           >
             {category.title}
           </Link>

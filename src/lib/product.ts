@@ -7,15 +7,15 @@ import type {
 export const MAX_QUANTITY = 99;
 
 const badgeByTag = [
-  ["oferta", "Oferta"],
-  ["nuevo", "Nuevo"],
-  ["mas-vendido", "Más vendido"],
+  { tag: "oferta", label: "Oferta", variant: "solid" },
+  { tag: "nuevo", label: "Nuevo", variant: "soft" },
+  { tag: "mas-vendido", label: "Más vendido", variant: "solid" },
 ] as const;
 
 export type SelectedOptions = Record<string, string>;
 
 export function getProductBadge(tags: string[]) {
-  return badgeByTag.find(([tag]) => tags.includes(tag))?.[1] ?? null;
+  return badgeByTag.find(({ tag }) => tags.includes(tag)) ?? null;
 }
 
 export function variantParam(id: string) {

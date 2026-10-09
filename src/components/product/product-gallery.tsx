@@ -34,9 +34,9 @@ export function ProductGallery({ handle, images, title }: ProductGalleryProps) {
       <Morph handle={handle}>
         <ImagePlaceholder
           label="Foto principal"
-          tone="surface"
+          tone="surface-2"
           withIcon
-          className={`${slideClassName} rounded-panel border border-line`}
+          className={`${slideClassName} rounded-panel rounded-bl-checkbox`}
         />
       </Morph>
     );
@@ -62,7 +62,7 @@ export function ProductGallery({ handle, images, title }: ProductGalleryProps) {
             const track = event.currentTarget;
             setActive(Math.round(track.scrollLeft / track.clientWidth));
           }}
-          className="flex snap-x snap-mandatory [scrollbar-width:none] overflow-x-auto overscroll-x-contain rounded-panel border border-line bg-surface lg:overflow-hidden"
+          className="flex snap-x snap-mandatory [scrollbar-width:none] overflow-x-auto overscroll-x-contain rounded-panel rounded-bl-checkbox bg-surface-2 lg:overflow-hidden"
         >
           {images.map((image, index) => (
             <li key={image.url} className="w-full shrink-0 snap-center">
@@ -70,7 +70,7 @@ export function ProductGallery({ handle, images, title }: ProductGalleryProps) {
                 image={image}
                 alt={image.altText || `${title}, imagen ${index + 1}`}
                 placeholder="Foto producto"
-                tone="surface"
+                tone="surface-2"
                 fit="contain"
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 preload={index === 0}
@@ -90,7 +90,7 @@ export function ProductGallery({ handle, images, title }: ProductGalleryProps) {
             {images.map((image, index) => (
               <span
                 key={image.url}
-                className={`size-1.5 rounded-pill transition-colors ${index === active ? "bg-ink" : "bg-line-strong"}`}
+                className={`h-1.5 rounded-pill transition-all duration-300 ${index === active ? "w-5 bg-accent" : "w-1.5 bg-line-strong"}`}
               />
             ))}
           </div>
@@ -102,13 +102,13 @@ export function ProductGallery({ handle, images, title }: ProductGalleryProps) {
                   aria-label={`Ver imagen ${index + 1} de ${images.length}`}
                   aria-current={index === active}
                   onClick={() => show(index)}
-                  className="block w-full overflow-hidden rounded-input border border-line transition-colors hover:border-line-strong aria-[current=true]:border-2 aria-[current=true]:border-ink"
+                  className="block w-full overflow-hidden rounded-input border border-line transition-colors hover:border-line-strong aria-[current=true]:border-2 aria-[current=true]:border-accent"
                 >
                   <Picture
                     image={image}
                     alt=""
                     placeholder="Foto producto"
-                    tone="surface"
+                    tone="surface-2"
                     fit="contain"
                     sizes="160px"
                     className="h-30"

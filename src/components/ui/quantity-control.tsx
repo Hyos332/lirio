@@ -50,7 +50,7 @@ export function QuantityControl({
       </button>
       <output
         aria-live="polite"
-        className="w-7 text-center font-mono text-md tabular-nums"
+        className="w-7 text-center text-md font-medium tabular-nums"
       >
         {value}
       </output>

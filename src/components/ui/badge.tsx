@@ -2,10 +2,11 @@ import type { ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 
-export type BadgeVariant = "solid" | "count";
+export type BadgeVariant = "solid" | "soft" | "count";
 
 const variants: Record<BadgeVariant, string> = {
-  solid: "h-6.5 bg-ink px-2.5 text-xs text-white",
+  solid: "h-6.5 bg-accent px-2.5 text-xs text-white",
+  soft: "h-6.5 bg-lilac px-2.5 text-xs text-ink",
   count: "h-4.5 min-w-4.5 bg-accent px-1 text-2xs text-white tabular-nums",
 };
 

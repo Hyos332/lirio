@@ -2,7 +2,7 @@ import { CatalogResultsSkeleton } from "@/components/catalog/catalog-results";
 import { CatalogToolbarSkeleton } from "@/components/catalog/catalog-toolbar";
 import { Container } from "@/components/ui/container";
 
-const block = "animate-pulse rounded-pill bg-surface-2";
+const block = "skeleton rounded-pill";
 
 export function CatalogPageSkeleton() {
   return (
@@ -28,12 +28,12 @@ export function CartSkeleton() {
         <div className="flex flex-col gap-6">
           {[0, 1].map((index) => (
             <div key={index} className="flex gap-6">
-              <div className="size-24 animate-pulse rounded-card-sm bg-surface-2 sm:size-35" />
+              <div className="size-24 skeleton rounded-card-sm sm:size-35" />
               <div className={`mt-4 h-5 flex-1 ${block}`} />
             </div>
           ))}
         </div>
-        <div className="h-96 animate-pulse rounded-panel bg-surface-2" />
+        <div className="h-96 skeleton rounded-panel" />
       </div>
     </div>
   );

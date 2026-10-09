@@ -32,10 +32,5 @@ export async function CatalogToolbar({ data, unit }: CatalogToolbarProps) {
 }
 
 export function CatalogToolbarSkeleton() {
-  return (
-    <div
-      aria-hidden
-      className="h-11 w-52 animate-pulse rounded-pill bg-surface-2"
-    />
-  );
+  return <div aria-hidden className="h-11 w-52 skeleton rounded-pill" />;
 }

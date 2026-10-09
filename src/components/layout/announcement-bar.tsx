@@ -34,7 +34,7 @@ export function AnnouncementBar() {
   if (!enabled) return null;
 
   return (
-    <div className="bg-ink text-white">
+    <div className="bg-accent text-white">
       <Container className="flex h-9 items-center justify-center gap-1.5 text-xs">
         <Suspense fallback={<Messages threshold={null} />}>
           <LocalizedMessages />

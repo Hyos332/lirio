@@ -34,7 +34,7 @@ export default async function ContentPage({
       <Breadcrumbs
         items={[{ title: "Inicio", href: routes.home }, { title: page.title }]}
       />
-      <h1 className="mt-6 text-h2-sm md:text-h1">{page.title}</h1>
+      <h1 className="mt-6 font-display text-h2-sm md:text-h1">{page.title}</h1>
       <RichText html={page.body} className="mt-8 max-w-3xl" />
     </Container>
   );
